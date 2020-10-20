@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/practice/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +21,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/routes" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -59,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603216048997</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="PRACTICE succesfull post request for book">
+      <created>1603221621202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603221621202</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -76,6 +88,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="succesful server started with practice setup from traversy" />
     <MESSAGE value="get all books request succesfully serving json" />
-    <option name="LAST_COMMIT_MESSAGE" value="get all books request succesfully serving json" />
+    <MESSAGE value="PRACTICE succesfull post request for book" />
+    <option name="LAST_COMMIT_MESSAGE" value="PRACTICE succesfull post request for book" />
   </component>
 </project>
