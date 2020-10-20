@@ -6,7 +6,7 @@ import (
 "log"
 "net/http"
 // "math/rand"
-// "strconv"
+ "strconv"
 "github.com/gorilla/mux"
 
 )
@@ -45,8 +45,8 @@ books = append(books, Book{ID: "2", Isbn:"745367", Title: "Book Two", Author: &A
 
 //route handlers/endpoints
 r.HandleFunc("/api/books", getBooks).Methods("GET")
-// r.HandleFunc("/api/books/{id}", getBook).Methods("GET")
-// r.HandleFunc("/api/books", createBook).Methods("POST")
+r.HandleFunc("/api/books/{id}", getBook).Methods("GET")
+ r.HandleFunc("/api/books", createBook).Methods("POST")
 // r.HandleFunc("/api/books/{id}", updateBook).Methods("PUT")
 // r.HandleFunc("/api/books/{id}", deleteBook).Methods("DELETE")
 
@@ -65,12 +65,28 @@ json.NewEncoder(w).Encode(books)
 
 //get single book
 func getBook(w http.ResponseWriter, r *http.Request){
- fmt.Fprintf(w, "<h1>Hellow World<h1>")
+w.Header().Set("Content-Type", "application/json")
+params := mux.Vars(r) //Get Params
+
+for _,item := range books {
+if item.ID == params["id"]{
+json.NewEncoder(w).Encode(item)
+return
+}
+}
+json.NewEncoder(w).Encode(&Book{})
 }
 
 //post a book
 func createBook(w http.ResponseWriter, r *http.Request){
- fmt.Fprintf(w, "<h1>Hellow World<h1>")
+w.Header().Set("Content-Type", "application/json")
+
+var book Book
+_ = json.NewDecoder(r.Body).Decode(&book)
+book.ID = strconv.Itoa(3)
+
+books = append(books, book)
+json.NewEncoder(w).Encode(book)
 }
 
 //update a book
