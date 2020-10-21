@@ -10,8 +10,10 @@ import (
 )
 
 type Project struct{
+
 Id string `json:"id"`
-Name string `json`
+ProjectName string `json:"projectName"`
+
 }
 
 type Employee struct{
@@ -23,30 +25,35 @@ LastName string `json:"last"`
 }
 
 var newEmployee Employee
+var newProject Project
 
-//main
 func main() {
 
-content, err := ioutil.ReadFile("employees.json")
-if err != nil {
+empContent, empErr := ioutil.ReadFile("employees.json")
+if empErr != nil {
 fmt.Println("could not read the file")
 }
 
-err2 := json.Unmarshal(content, &newEmployee)
-if err2 != nil {
+empErr2 := json.Unmarshal(empContent, &newEmployee)
+if empErr2 != nil {
+fmt.Println("unmarshal error")
+}
+
+projectContent, proErr := ioutil.ReadFile("projects.json")
+if proErr != nil {
+fmt.Println("could not read the file")
+}
+
+proErr2 := json.Unmarshal(projectContent, &newProject)
+if proErr2 != nil {
 fmt.Println("unmarshal error")
 }
 
 r:=mux.NewRouter()
 
-// newEmployee = Employee{
-//             Id:"1",
-//             FirstName:"Chris",
-//             LastName:"Ciric"}
-
 
 r.HandleFunc("/employees", getEmployees).Methods("GET")
-// r.HandleFunc("/project", getProjects).Methods("GET")
+r.HandleFunc("/projects", getProjects).Methods("GET")
 // r.HandleFunc("/sow", getSow).Methods("GET")
 // r.HandleFunc("/clients", getClients).Methods("GET")
 
@@ -58,6 +65,11 @@ http.ListenAndServe(":8081", r)
 func getEmployees(w http.ResponseWriter, r *http.Request){
 w.Header().Set("Content-Type", "application/json")
 json.NewEncoder(w).Encode(newEmployee)
+}
+
+func getProjects(w http.ResponseWriter, r *http.Request){
+w.Header().Set("Content-Type", "application/json")
+json.NewEncoder(w).Encode(newProject)
 }
 
 
