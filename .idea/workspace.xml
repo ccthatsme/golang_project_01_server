@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/sow.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603250152127</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="successful GET sow request using external json file for that has an sow">
+      <created>1603251146324</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603251146324</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +119,7 @@
     <MESSAGE value="PRACTICE successful GET request for employees" />
     <MESSAGE value="successful GET employees request using external json file for that has an employee" />
     <MESSAGE value="successful GET projects request using external json file for that has an project" />
-    <option name="LAST_COMMIT_MESSAGE" value="successful GET projects request using external json file for that has an project" />
+    <MESSAGE value="successful GET sow request using external json file for that has an sow" />
+    <option name="LAST_COMMIT_MESSAGE" value="successful GET sow request using external json file for that has an sow" />
   </component>
 </project>
