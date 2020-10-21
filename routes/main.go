@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/golang_project_01_server/routes/middleware"
 	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
@@ -79,10 +80,12 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/employees", getEmployees).Methods("GET")
-	r.HandleFunc("/projects", getProjects).Methods("GET")
-	r.HandleFunc("/sow", getSow).Methods("GET")
-	r.HandleFunc("/clients", getClients).Methods("GET")
+	r.HandleFunc("/employees", middleware.BasicAuth(getEmployees)).Methods("GET")
+
+	//	r.HandleFunc("/employees", getEmployees).Methods("GET")
+	// 	r.HandleFunc("/projects", getProjects).Methods("GET")
+	// 	r.HandleFunc("/sow", getSow).Methods("GET")
+	// 	r.HandleFunc("/clients", getClients).Methods("GET")
 
 	http.ListenAndServe(":8081", r)
 
@@ -93,17 +96,17 @@ func getEmployees(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(newEmployee)
 }
 
-func getProjects(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(newProject)
-}
-
-func getSow(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(newSow)
-}
-
-func getClients(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(newClient)
-}
+// func getProjects(w http.ResponseWriter, r *http.Request) {
+// 	w.Header().Set("Content-Type", "application/json")
+// 	json.NewEncoder(w).Encode(newProject)
+// }
+//
+// func getSow(w http.ResponseWriter, r *http.Request) {
+// 	w.Header().Set("Content-Type", "application/json")
+// 	json.NewEncoder(w).Encode(newSow)
+// }
+//
+// func getClients(w http.ResponseWriter, r *http.Request) {
+// 	w.Header().Set("Content-Type", "application/json")
+// 	json.NewEncoder(w).Encode(newClient)
+// }
