@@ -16,6 +16,13 @@ ProjectName string `json:"projectName"`
 
 }
 
+type SOW struct{
+
+Id string `json:"id"`
+WorkName string `json:"workName"`
+
+}
+
 type Employee struct{
 
 Id string `json:"id"`
@@ -26,6 +33,7 @@ LastName string `json:"last"`
 
 var newEmployee Employee
 var newProject Project
+var newSow SOW
 
 func main() {
 
@@ -49,12 +57,22 @@ if proErr2 != nil {
 fmt.Println("unmarshal error")
 }
 
+sowContent, sowErr := ioutil.ReadFile("sow.json")
+if sowErr != nil {
+fmt.Println("could not read the file")
+}
+
+sowErr2 := json.Unmarshal(sowContent, &newSow)
+if sowErr2 != nil {
+fmt.Println("unmarshal error")
+}
+
 r:=mux.NewRouter()
 
 
 r.HandleFunc("/employees", getEmployees).Methods("GET")
 r.HandleFunc("/projects", getProjects).Methods("GET")
-// r.HandleFunc("/sow", getSow).Methods("GET")
+r.HandleFunc("/sow", getSow).Methods("GET")
 // r.HandleFunc("/clients", getClients).Methods("GET")
 
 
@@ -72,6 +90,10 @@ w.Header().Set("Content-Type", "application/json")
 json.NewEncoder(w).Encode(newProject)
 }
 
+func getSow(w http.ResponseWriter, r *http.Request){
+w.Header().Set("Content-Type", "application/json")
+json.NewEncoder(w).Encode(newSow)
+}
 
 
 
