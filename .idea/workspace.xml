@@ -4,7 +4,6 @@
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/middleware/authMiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/middleware/authMiddleware.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603311352371</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="implemented a basic auth, checks user and password input in postman to expected user and password in authMiddlewar.go">
+      <created>1603338054840</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603338054840</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commiting just in case">
+      <created>1603338170440</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603338170440</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +159,7 @@
     <MESSAGE value="successful GET clients request using external json file for that has an client" />
     <MESSAGE value="formatted code using gofmt -w main.go command" />
     <MESSAGE value="implemented a basic auth, checks user and password input in postman to expected user and password in authMiddlewar.go" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented a basic auth, checks user and password input in postman to expected user and password in authMiddlewar.go" />
+    <MESSAGE value="commiting just in case" />
+    <option name="LAST_COMMIT_MESSAGE" value="commiting just in case" />
   </component>
 </project>
