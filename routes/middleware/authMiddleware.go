@@ -18,7 +18,6 @@ func BasicAuth(handler http.HandlerFunc) http.HandlerFunc {
 			handler.ServeHTTP(w, r)
 			return
 		} else {
-			w.Header().Set("x-auth-token", password)
 			handler.ServeHTTP(w, r)
 		}
 

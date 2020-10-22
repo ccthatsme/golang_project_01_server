@@ -81,8 +81,8 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/employees", middleware.BasicAuth(getEmployees)).Methods("GET")
-
-	//	r.HandleFunc("/employees", getEmployees).Methods("GET")
+    r.HandleFunc("/projects", middleware.BasicAuth(getProjects)).Methods("GET")
+	//r.HandleFunc("/employees", getEmployees).Methods("GET")
 	// 	r.HandleFunc("/projects", getProjects).Methods("GET")
 	// 	r.HandleFunc("/sow", getSow).Methods("GET")
 	// 	r.HandleFunc("/clients", getClients).Methods("GET")
@@ -96,11 +96,11 @@ func getEmployees(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(newEmployee)
 }
 
-// func getProjects(w http.ResponseWriter, r *http.Request) {
-// 	w.Header().Set("Content-Type", "application/json")
-// 	json.NewEncoder(w).Encode(newProject)
-// }
-//
+func getProjects(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(newProject)
+}
+
 // func getSow(w http.ResponseWriter, r *http.Request) {
 // 	w.Header().Set("Content-Type", "application/json")
 // 	json.NewEncoder(w).Encode(newSow)
