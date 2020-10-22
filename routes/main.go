@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/golang_project_01_server/routes/middleware"
 	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
@@ -35,6 +34,7 @@ var newEmployee Employee
 var newProject Project
 var newSow SOW
 var newClient Client
+var token string
 
 func main() {
 
@@ -80,14 +80,18 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/employees", middleware.BasicAuth(getEmployees)).Methods("GET")
-    r.HandleFunc("/projects", middleware.BasicAuth(getProjects)).Methods("GET")
-	//r.HandleFunc("/employees", getEmployees).Methods("GET")
-	// 	r.HandleFunc("/projects", getProjects).Methods("GET")
-	// 	r.HandleFunc("/sow", getSow).Methods("GET")
-	// 	r.HandleFunc("/clients", getClients).Methods("GET")
+	r.HandleFunc("/login", BasicAuth(login)).Methods("GET")
+	r.HandleFunc("/employees", ValidateTokenMiddleware(getEmployees)).Methods("GET")
+	r.HandleFunc("/projects", ValidateTokenMiddleware(getProjects)).Methods("GET")
+	r.HandleFunc("/sow", ValidateTokenMiddleware(getSow)).Methods("GET")
+	r.HandleFunc("/clients", ValidateTokenMiddleware(getClients)).Methods("GET")
 
 	http.ListenAndServe(":8081", r)
+
+}
+
+func login(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 
 }
 
@@ -101,12 +105,50 @@ func getProjects(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(newProject)
 }
 
-// func getSow(w http.ResponseWriter, r *http.Request) {
-// 	w.Header().Set("Content-Type", "application/json")
-// 	json.NewEncoder(w).Encode(newSow)
-// }
-//
-// func getClients(w http.ResponseWriter, r *http.Request) {
-// 	w.Header().Set("Content-Type", "application/json")
-// 	json.NewEncoder(w).Encode(newClient)
-// }
+func getSow(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(newSow)
+}
+
+func getClients(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(newClient)
+}
+
+func BasicAuth(handler http.HandlerFunc) http.HandlerFunc {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		username, password, ok := r.BasicAuth()
+		fmt.Println("username: ", username)
+		fmt.Println("password: ", password)
+		fmt.Println("ok: ", ok)
+		token = password
+		if !ok || !checkUserAndPassword(username, password) {
+			w.Header().Set("x-auth-token", "invalid")
+			w.WriteHeader(401)
+			w.Write([]byte("not authorized"))
+			handler.ServeHTTP(w, r)
+			return
+		} else {
+
+			handler.ServeHTTP(w, r)
+		}
+
+	})
+}
+
+func checkUserAndPassword(username, password string) bool {
+	return username == "cc" && password == "password"
+}
+
+func ValidateTokenMiddleware(next http.HandlerFunc) http.HandlerFunc {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if token == "password" {
+			next(w, r)
+		} else {
+			w.Header().Set("x-auth-token", "invalid")
+			w.WriteHeader(401)
+		}
+
+	})
+
+}
