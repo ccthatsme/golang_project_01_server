@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/auth-handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603338170440</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="got a succesfull authentication response in postman, need to adjust response body">
+      <created>1603421860241</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603421860241</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +169,7 @@
     <MESSAGE value="formatted code using gofmt -w main.go command" />
     <MESSAGE value="implemented a basic auth, checks user and password input in postman to expected user and password in authMiddlewar.go" />
     <MESSAGE value="commiting just in case" />
-    <option name="LAST_COMMIT_MESSAGE" value="commiting just in case" />
+    <MESSAGE value="got a succesfull authentication response in postman, need to adjust response body" />
+    <option name="LAST_COMMIT_MESSAGE" value="got a succesfull authentication response in postman, need to adjust response body" />
   </component>
 </project>
