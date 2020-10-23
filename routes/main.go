@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/golang_project_01_server/services"
 	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
-	"github.com/golang_project_01_server/services"
 )
 
 type Client struct {
@@ -81,7 +81,7 @@ func main() {
 
 	r := mux.NewRouter()
 
-    r.HandleFunc("/auth", services.Auth).Methods("POST")
+	r.HandleFunc("/auth", services.Auth).Methods("POST")
 	r.HandleFunc("/login", BasicAuth(login)).Methods("GET")
 	r.HandleFunc("/employees", ValidateTokenMiddleware(getEmployees)).Methods("GET")
 	r.HandleFunc("/projects", ValidateTokenMiddleware(getProjects)).Methods("GET")
