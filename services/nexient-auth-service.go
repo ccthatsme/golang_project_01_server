@@ -2,10 +2,8 @@ package services
 
 import (
 	"encoding/json"
-	//"fmt"
 	"github.com/golang_project_01_server/datasources"
 	"net/http"
-	"strings"
 )
 
 type AuthResponse struct {
@@ -22,24 +20,15 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Version", "2")
 
-    decoder := json.NewDecoder(r.Body)
-    user := &datasources.Credential{}
-    err := decoder.Decode(user)
-    if err != nil {
-        panic(err)
-    }
+	decoder := json.NewDecoder(r.Body)
+	user := &datasources.Credential{}
+	err := decoder.Decode(user)
+	if err != nil {
+		panic(err)
+	}
 
+	array := datasources.Authenticate(user)
 
- 	array, accesstoken := datasources.Authenticate(user)
-
-
-	resp.AccessToken = strings.Join(accesstoken, "")
-	resp.RefreshToken = strings.Join(accesstoken, "")
-
-
-
-	json.Unmarshal(array, &resp)
-
-	json.NewEncoder(w).Encode(resp)
+	json.NewEncoder(w).Encode(array)
 
 }
