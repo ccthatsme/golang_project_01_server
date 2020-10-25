@@ -2,7 +2,7 @@ package services
 
 import (
 	"encoding/json"
-	"fmt"
+	//"fmt"
 	"github.com/golang_project_01_server/datasources"
 	"net/http"
 	"strings"
@@ -22,12 +22,21 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Version", "2")
 
-	array, accesstoken := datasources.Authenticate()
+    decoder := json.NewDecoder(r.Body)
+    user := &datasources.Credential{}
+    err := decoder.Decode(user)
+    if err != nil {
+        panic(err)
+    }
 
-	fmt.Println(accesstoken)
+
+ 	array, accesstoken := datasources.Authenticate(user)
+
 
 	resp.AccessToken = strings.Join(accesstoken, "")
 	resp.RefreshToken = strings.Join(accesstoken, "")
+
+
 
 	json.Unmarshal(array, &resp)
 

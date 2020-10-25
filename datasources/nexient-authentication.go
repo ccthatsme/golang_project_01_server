@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 type Credential struct {
@@ -13,16 +14,24 @@ type Credential struct {
 	Password string `json:"password"`
 }
 
-var user Credential
 
-func Authenticate() ([]byte, []string) {
+type sampleChange struct {
+	AccessToken  string   `json:"accesstoken"`
+	DisplayName  string   `json:"displayName"`
+	RefreshToken string   `json:"refreshtoken"`
+	Username     string   `json:"username"`
+	Groups       []string `json:"groups"`
+}
 
-	user = Credential{Username: "cciric", Password: "Dustbumper6025!\""}
-	json, _ := json.Marshal(user)
+var respAuth sampleChange
+
+func Authenticate(user *Credential) ([]byte, []string) {
+
+	userJson, _ := json.Marshal(*user)
 
 	client := http.Client{}
 
-	request, err := http.NewRequest("POST", "https://portal.nexient.com/gateway/api/authentication/authenticate", bytes.NewBuffer(json))
+	request, err := http.NewRequest("POST", "https://portal.nexient.com/gateway/api/authentication/authenticate", bytes.NewBuffer(userJson))
 	request.Header.Set("Content-type", "application/json")
 	request.Header.Set("Version", "2")
 
@@ -35,13 +44,28 @@ func Authenticate() ([]byte, []string) {
 		fmt.Println("error making post request, nex-auth.go")
 	}
 	access := resp.Header["Accesstoken"]
-	fmt.Println(access)
+	refresh:= resp.Header["Refreshtoken"]
+
+    respAuth.AccessToken = strings.Join(access, "")
+	respAuth.RefreshToken = strings.Join(refresh, "")
 
 	defer resp.Body.Close()
 
-	bodyBytes, _ := ioutil.ReadAll(resp.Body)
+	bodyBytes, err:= ioutil.ReadAll(resp.Body)
+	if err != nil {
+    		fmt.Println("line 57")
+    	}
 
-	fmt.Println(string(bodyBytes))
+ 	json.Unmarshal(bodyBytes, &respAuth)
+ 	if err != nil {
+    		fmt.Println("line 58")
+    	}
+fmt.Println("________________")
+    fmt.Println(respAuth)
+
+
+fmt.Println(resp, "response")
+	fmt.Println(string(bodyBytes), "body bytes")
 
 	return bodyBytes, access
 }

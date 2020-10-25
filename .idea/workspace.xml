@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="succesfully got accesstoken to print, and stored in the response struct, appears in postman when doing the authentication endpoint. refresh token is same as access token from what I saw in nexport">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
