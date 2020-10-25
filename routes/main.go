@@ -82,8 +82,9 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/auth", services.Auth).Methods("POST")
-	r.HandleFunc("/login", BasicAuth(login)).Methods("GET")
-	r.HandleFunc("/employees", ValidateTokenMiddleware(getEmployees)).Methods("GET")
+	//r.HandleFunc("/login", BasicAuth(login)).Methods("GET")
+	r.HandleFunc("/employees", services.CheckTokenExists(getEmployees)).Methods("GET")
+	//r.HandleFunc("/employees", ValidateTokenMiddleware(getEmployees)).Methods("GET")
 	r.HandleFunc("/projects", ValidateTokenMiddleware(getProjects)).Methods("GET")
 	r.HandleFunc("/sow", ValidateTokenMiddleware(getSow)).Methods("GET")
 	r.HandleFunc("/clients", ValidateTokenMiddleware(getClients)).Methods("GET")
