@@ -1,6 +1,8 @@
 package main
 
 import (
+
+   // "context"
 	"encoding/json"
 	"fmt"
 	"github.com/golang_project_01_server/services"
@@ -99,6 +101,8 @@ func login(w http.ResponseWriter, r *http.Request) {
 }
 
 func getEmployees(w http.ResponseWriter, r *http.Request) {
+fmt.Println(r.Context(), "printed at handler")
+fmt.Println(r.Context(), "printed at handler")
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(newEmployee)
 }

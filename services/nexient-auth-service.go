@@ -2,6 +2,7 @@ package services
 
 import (
 "fmt"
+"context"
 	"encoding/json"
 	"github.com/golang_project_01_server/datasources"
 	"net/http"
@@ -16,9 +17,13 @@ type AuthResponse struct {
 	Groups       []string `json:"groups"`
 }
 
+type XAuth struct {
+Token string `json:"token"`
+}
+
 var resp AuthResponse
 
-var token string
+var xAuth XAuth
 
 func Auth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -33,7 +38,7 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 
 	array := datasources.Authenticate(user)
 
-token = array.AccessToken
+xAuth.Token = array.AccessToken
 fmt.Println("___________________test")
 fmt.Println(array.AccessToken)
 fmt.Printf("%T",array.AccessToken)
@@ -46,6 +51,15 @@ fmt.Printf("%T",array.AccessToken)
 func CheckTokenExists(next http.HandlerFunc) http.HandlerFunc{
 return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
 ctx := r.Context()
+ctx = context.WithValue(ctx, "X-Authorization", xAuth)
 fmt.Println(ctx, "this is the context")
+
+k := ctx.Value("X-Authorization")
+fmt.Println(k)
+if k != nil {
+next(w, r.WithContext(ctx))
+}
 })
 }
+
+//the token should not be of a type String which is whhat i have here, I should change it to a struct
