@@ -23,7 +23,7 @@ Token string `json:"token"`
 
 var resp AuthResponse
 
-var xAuth XAuth
+var AuthToken XAuth
 
 func Auth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -38,20 +38,26 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 
 	array := datasources.Authenticate(user)
 
-xAuth.Token = array.AccessToken
-fmt.Println("___________________test")
-fmt.Println(array.AccessToken)
-fmt.Printf("%T",array.AccessToken)
+AuthToken.Token = array.AccessToken
 
 	json.NewEncoder(w).Encode(array)
 
+}
+
+func GetEmployees(w http.ResponseWriter, r *http.Request){
+    w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Version", "2")
+
+	array := datasources.GetAllEmployees(AuthToken.Token)
+
+	json.NewEncoder(w).Encode(string(array))
 }
 
 //middleware for checking token
 func CheckTokenExists(next http.HandlerFunc) http.HandlerFunc{
 return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
 ctx := r.Context()
-ctx = context.WithValue(ctx, "X-Authorization", xAuth)
+ctx = context.WithValue(ctx, "X-Authorization", AuthToken)
 fmt.Println(ctx, "this is the context")
 
 k := ctx.Value("X-Authorization")
@@ -62,4 +68,3 @@ next(w, r.WithContext(ctx))
 })
 }
 
-//the token should not be of a type String which is whhat i have here, I should change it to a struct

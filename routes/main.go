@@ -84,8 +84,9 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/auth", services.Auth).Methods("POST")
+	r.HandleFunc("/employees", services.GetEmployees).Methods("GET")
 	//r.HandleFunc("/login", BasicAuth(login)).Methods("GET")
-	r.HandleFunc("/employees", services.CheckTokenExists(getEmployees)).Methods("GET")
+// 	r.HandleFunc("/employees", services.CheckTokenExists(getEmployees)).Methods("GET")
 	//r.HandleFunc("/employees", ValidateTokenMiddleware(getEmployees)).Methods("GET")
 	r.HandleFunc("/projects", ValidateTokenMiddleware(getProjects)).Methods("GET")
 	r.HandleFunc("/sow", ValidateTokenMiddleware(getSow)).Methods("GET")
@@ -102,7 +103,10 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 func getEmployees(w http.ResponseWriter, r *http.Request) {
 fmt.Println(r.Context(), "printed at handler")
-fmt.Println(r.Context(), "printed at handler")
+//ctx := r.Context()
+//tok := ctx.Value("X-Authorization")
+
+    w.Header().Set("X-Authorization", services.AuthToken.Token)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(newEmployee)
 }

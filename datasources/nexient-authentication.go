@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
+	//"github.com/ugorji/go/codec"
 )
 
 type Credential struct {
@@ -22,6 +23,14 @@ type AuthResponse struct {
 	Groups       []string `json:"groups"`
 }
 
+type Employee struct {
+Id string `json:"id"`
+}
+
+var allEmp []Employee
+
+var m interface{}
+var emp Employee
 var respAuth AuthResponse
 
 func Authenticate(user *Credential) AuthResponse {
@@ -61,3 +70,37 @@ func Authenticate(user *Credential) AuthResponse {
 
 	return respAuth
 }
+
+func GetAllEmployees(authKey string) []Employee{
+
+client := http.Client{}
+
+	request, err := http.NewRequest("GET", "https://portal.nexient.com/gateway/api/employees", nil)
+	request.Header.Set("Content-type", "application/json")
+	request.Header.Set("Version", "2")
+	request.Header.Set("X-Authorization", authKey)
+	if err != nil {
+		fmt.Println("line 40 nex-auth")
+	}
+
+	resp, err := client.Do(request)
+	if err != nil {
+		fmt.Println("error making post request, nex-auth.go")
+	}
+
+	defer resp.Body.Close()
+
+	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("line 57")
+	}
+
+	json.Unmarshal(bodyBytes, &allEmp)
+	if err != nil {
+		fmt.Println("line 58")
+	}
+fmt.Println(allEmp)
+	return bodyBytes
+
+}
+//do the same above for authenticat down here for employees

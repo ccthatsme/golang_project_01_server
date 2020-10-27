@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
@@ -163,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603668407717</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1">
+      <created>1603725995118</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1603725995118</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +201,7 @@
     <MESSAGE value="with Guy's help, we debugged why I was getting an undefined unmarshal error, because I have variables named the same things, fixed and now I can unmarshal succesfully into a authresponse struct" />
     <MESSAGE value="succesful 200 response for authentication, moved the AuthResponse struct into the datasource, it passes the response into the service now" />
     <MESSAGE value="getting the context to print on a call to the olg getEmployees method" />
-    <option name="LAST_COMMIT_MESSAGE" value="getting the context to print on a call to the olg getEmployees method" />
+    <MESSAGE value="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1" />
   </component>
 </project>
