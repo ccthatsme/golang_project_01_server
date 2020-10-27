@@ -24,7 +24,7 @@ type AuthResponse struct {
 }
 
 type Employee struct {
-Id string `json:"id"`
+	Id string `json:"id"`
 }
 
 var allEmp []Employee
@@ -71,9 +71,9 @@ func Authenticate(user *Credential) AuthResponse {
 	return respAuth
 }
 
-func GetAllEmployees(authKey string) []Employee{
+func GetAllEmployees(authKey string) []Employee {
 
-client := http.Client{}
+	client := http.Client{}
 
 	request, err := http.NewRequest("GET", "https://portal.nexient.com/gateway/api/employees", nil)
 	request.Header.Set("Content-type", "application/json")
@@ -99,8 +99,41 @@ client := http.Client{}
 	if err != nil {
 		fmt.Println("line 58")
 	}
-fmt.Println(allEmp)
-	return bodyBytes
+	return allEmp
 
 }
+
+func GetEmployee(authKey string, employeeId string) Employee {
+
+	client := http.Client{}
+
+	request, err := http.NewRequest("GET", "https://portal.nexient.com/gateway/api/employees/"+employeeId, nil)
+	request.Header.Set("Content-type", "application/json")
+	request.Header.Set("Version", "2")
+	request.Header.Set("X-Authorization", authKey)
+	if err != nil {
+		fmt.Println("line 40 nex-auth")
+	}
+
+	resp, err := client.Do(request)
+	if err != nil {
+		fmt.Println("error making post request, nex-auth.go")
+	}
+
+	defer resp.Body.Close()
+
+	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("line 57")
+	}
+	fmt.Println(string(bodyBytes))
+	json.Unmarshal(bodyBytes, &emp)
+	if err != nil {
+		fmt.Println("line 58")
+	}
+	fmt.Println(emp)
+	return emp
+
+}
+
 //do the same above for authenticat down here for employees

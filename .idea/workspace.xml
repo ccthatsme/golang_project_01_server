@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603725995118</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="converting getAllEmployees response from byte array to array of Employee struct">
+      <created>1603769175245</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603769175245</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,6 +209,7 @@
     <MESSAGE value="succesful 200 response for authentication, moved the AuthResponse struct into the datasource, it passes the response into the service now" />
     <MESSAGE value="getting the context to print on a call to the olg getEmployees method" />
     <MESSAGE value="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1" />
+    <MESSAGE value="converting getAllEmployees response from byte array to array of Employee struct" />
+    <option name="LAST_COMMIT_MESSAGE" value="converting getAllEmployees response from byte array to array of Employee struct" />
   </component>
 </project>
