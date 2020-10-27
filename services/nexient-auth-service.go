@@ -3,11 +3,10 @@ package services
 import (
 	"context"
 	"encoding/json"
-	"fmt"
+	//"fmt"
 	"github.com/golang_project_01_server/datasources"
-	"net/http"
-	//"github.com/golang_project_01_server/routes/middleware"
 	"github.com/gorilla/mux"
+	"net/http"
 )
 
 type AuthResponse struct {
@@ -58,7 +57,7 @@ func GetEmployee(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Version", "2")
 	params := mux.Vars(r)
-	fmt.Println(params["employeeNetworkid"])
+
 	array := datasources.GetEmployee(AuthToken.Token, params["employeeNetworkid"])
 
 	json.NewEncoder(w).Encode(array)
@@ -69,10 +68,9 @@ func CheckTokenExists(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		ctx := r.Context()
 		ctx = context.WithValue(ctx, "X-Authorization", AuthToken)
-		fmt.Println(ctx, "this is the context")
 
 		k := ctx.Value("X-Authorization")
-		fmt.Println(k)
+
 		if k != nil {
 			next(w, r.WithContext(ctx))
 		}

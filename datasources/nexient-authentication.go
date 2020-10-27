@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
-	//"github.com/ugorji/go/codec"
 )
 
 type Credential struct {
@@ -24,7 +23,9 @@ type AuthResponse struct {
 }
 
 type Employee struct {
-	Id string `json:"id"`
+	Id          string `json:"id"`
+	DisplayName string `json:"displayName"`
+	Email       string `json:"email"`
 }
 
 var allEmp []Employee
@@ -131,9 +132,6 @@ func GetEmployee(authKey string, employeeId string) Employee {
 	if err != nil {
 		fmt.Println("line 58")
 	}
-	fmt.Println(emp)
 	return emp
 
 }
-
-//do the same above for authenticat down here for employees
