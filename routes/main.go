@@ -84,6 +84,7 @@ func main() {
 	r.HandleFunc("/auth", services.Auth).Methods("POST")
 	r.HandleFunc("/employees", services.CheckTokenExists(services.GetEmployees)).Methods("GET")
 	r.HandleFunc("/employees/{employeeNetworkid}", services.CheckTokenExists(services.GetEmployee)).Methods("GET")
+	r.HandleFunc("/projects", services.CheckTokenExists(services.GetProjects)).Methods("GET")
 	//r.HandleFunc("/login", BasicAuth(login)).Methods("GET")
 	// 	r.HandleFunc("/employees", services.CheckTokenExists(getEmployees)).Methods("GET")
 	//r.HandleFunc("/employees", ValidateTokenMiddleware(getEmployees)).Methods("GET")

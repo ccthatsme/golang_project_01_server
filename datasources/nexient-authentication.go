@@ -28,10 +28,18 @@ type Employee struct {
 	Email       string `json:"email"`
 }
 
+type Project struct {
+Id  string `json:"id"`
+Active bool `json:"active"`
+Name string `json:"name"`
+}
+
 var allEmp []Employee
+var allPro []Project
 
 var m interface{}
 var emp Employee
+var pro Project
 var respAuth AuthResponse
 
 func Authenticate(user *Credential) AuthResponse {
@@ -133,5 +141,37 @@ func GetEmployee(authKey string, employeeId string) Employee {
 		fmt.Println("line 58")
 	}
 	return emp
+
+}
+
+func GetAllProjects(authKey string) []Project {
+
+	client := http.Client{}
+
+	request, err := http.NewRequest("GET", "https://portal.nexient.com/gateway/api/projects", nil)
+	request.Header.Set("Content-type", "application/json")
+	request.Header.Set("Version", "1")
+	request.Header.Set("X-Authorization", authKey)
+	if err != nil {
+		fmt.Println("line 40 nex-auth")
+	}
+
+	resp, err := client.Do(request)
+	if err != nil {
+		fmt.Println("error making post request, nex-auth.go")
+	}
+
+	defer resp.Body.Close()
+
+	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("line 57")
+	}
+
+	json.Unmarshal(bodyBytes, &allPro)
+	if err != nil {
+		fmt.Println("line 58")
+	}
+	return allPro
 
 }
