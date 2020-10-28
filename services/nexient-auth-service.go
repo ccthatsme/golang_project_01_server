@@ -72,6 +72,16 @@ func GetProjects(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(array)
 }
 
+func GetProject(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Version", "2")
+    params := mux.Vars(r)
+
+	array := datasources.GetProject(AuthToken.Token, params["id"])
+
+	json.NewEncoder(w).Encode(array)
+}
+
 //middleware for checking token
 func CheckTokenExists(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

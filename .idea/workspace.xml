@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="a little cleanup and formatting">
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
@@ -192,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603810560314</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="200 response for getAllProjects endpoint">
+      <created>1603851890767</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1603851890767</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +233,7 @@
     <MESSAGE value="converting getAllEmployees response from byte array to array of Employee struct" />
     <MESSAGE value="/employees and /employees/{id} both succesfully work, struct I have for employee currently only returns the id, for brevity did not include all the data" />
     <MESSAGE value="a little cleanup and formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="a little cleanup and formatting" />
+    <MESSAGE value="200 response for getAllProjects endpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="200 response for getAllProjects endpoint" />
   </component>
 </project>
