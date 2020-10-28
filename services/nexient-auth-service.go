@@ -24,6 +24,7 @@ type XAuth struct {
 var resp AuthResponse
 
 var AuthToken XAuth
+var AuthTokenTwo XAuth
 
 func Auth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -48,7 +49,11 @@ func GetEmployees(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Version", "2")
 
-	array := datasources.GetAllEmployees(AuthToken.Token)
+	ctx := r.Context()
+	authorization := ctx.Value("X-Authorization")
+	t := authorization.(string)
+
+	array := datasources.GetAllEmployees(t)
 
 	json.NewEncoder(w).Encode(array)
 }
@@ -56,9 +61,12 @@ func GetEmployees(w http.ResponseWriter, r *http.Request) {
 func GetEmployee(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Version", "2")
+	ctx := r.Context()
+	authorization := ctx.Value("X-Authorization")
+	t := authorization.(string)
 	params := mux.Vars(r)
 
-	array := datasources.GetEmployee(AuthToken.Token, params["employeeNetworkid"])
+	array := datasources.GetEmployee(t, params["employeeNetworkid"])
 
 	json.NewEncoder(w).Encode(array)
 }
@@ -66,8 +74,10 @@ func GetEmployee(w http.ResponseWriter, r *http.Request) {
 func GetProjects(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Version", "2")
-
-	array := datasources.GetAllProjects(AuthToken.Token)
+	ctx := r.Context()
+	authorization := ctx.Value("X-Authorization")
+	t := authorization.(string)
+	array := datasources.GetAllProjects(t)
 
 	json.NewEncoder(w).Encode(array)
 }
@@ -75,9 +85,12 @@ func GetProjects(w http.ResponseWriter, r *http.Request) {
 func GetProject(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Version", "2")
-    params := mux.Vars(r)
+	params := mux.Vars(r)
+	ctx := r.Context()
+	authorization := ctx.Value("X-Authorization")
+	t := authorization.(string)
 
-	array := datasources.GetProject(AuthToken.Token, params["id"])
+	array := datasources.GetProject(t, params["id"])
 
 	json.NewEncoder(w).Encode(array)
 }
@@ -86,7 +99,7 @@ func GetProject(w http.ResponseWriter, r *http.Request) {
 func CheckTokenExists(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		ctx := r.Context()
-		ctx = context.WithValue(ctx, "X-Authorization", AuthToken)
+		ctx = context.WithValue(ctx, "X-Authorization", AuthToken.Token)
 
 		k := ctx.Value("X-Authorization")
 

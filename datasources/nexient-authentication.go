@@ -29,9 +29,9 @@ type Employee struct {
 }
 
 type Project struct {
-Id  string `json:"id"`
-Active bool `json:"active"`
-Name string `json:"name"`
+	Id     string `json:"id"`
+	Active bool   `json:"active"`
+	Name   string `json:"name"`
 }
 
 var allEmp []Employee
