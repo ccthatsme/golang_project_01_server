@@ -1,0 +1,26 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    One: Employee
+    Two: Project
+}
+
+type Mutation {
+
+}
+
+type Employee {
+    Id: ID
+    DisplayName: String
+    Email: String
+
+}
+
+type Project{
+    Id: ID
+    Active: Boolean
+    Name: String
+}
