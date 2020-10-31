@@ -3,8 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/services"
 	"github.com/gorilla/mux"
+	"github.com/graphql-go/graphql"
 	"io/ioutil"
 	"net/http"
 )
@@ -39,45 +41,39 @@ var token string
 
 func main() {
 
-	empContent, empErr := ioutil.ReadFile("employees.json")
-	if empErr != nil {
-		fmt.Println("could not read the file")
-	}
+	var employeeType = graphql.NewObject(
+		graphql.ObjectConfig{
+			Name: "Employee",
+			Fields: graphql.Fields{
+				"id": &graphql.Field{
+					Type: graphql.ID,
+				},
+				"display_name": &graphql.Field{
+					Type: graphql.String,
+				},
+				"email": &graphql.Field{
+					Type: graphql.String,
+				},
+			},
+		},
+	)
 
-	empErr2 := json.Unmarshal(empContent, &newEmployee)
-	if empErr2 != nil {
-		fmt.Println("unmarshal error")
-	}
-
-	projectContent, proErr := ioutil.ReadFile("projects.json")
-	if proErr != nil {
-		fmt.Println("could not read the file")
-	}
-
-	proErr2 := json.Unmarshal(projectContent, &newProject)
-	if proErr2 != nil {
-		fmt.Println("unmarshal error")
-	}
-
-	sowContent, sowErr := ioutil.ReadFile("sow.json")
-	if sowErr != nil {
-		fmt.Println("could not read the file")
-	}
-
-	sowErr2 := json.Unmarshal(sowContent, &newSow)
-	if sowErr2 != nil {
-		fmt.Println("unmarshal error")
-	}
-
-	clientContent, clientErr := ioutil.ReadFile("clients.json")
-	if clientErr != nil {
-		fmt.Println("could not read the file")
-	}
-
-	clientErr2 := json.Unmarshal(clientContent, &newClient)
-	if clientErr2 != nil {
-		fmt.Println("unmarshal error")
-	}
+	var projectType = graphql.NewObject(
+		graphql.ObjectConfig{
+			Name: "Project",
+			Fields: graphql.Fields{
+				"id": &graphql.Field{
+					Type: graphql.ID,
+				},
+				"active": &graphql.Field{
+					Type: graphql.Boolean,
+				},
+				"name": &graphql.Field{
+					Type: graphql.String,
+				},
+			},
+		},
+	)
 
 	r := mux.NewRouter()
 

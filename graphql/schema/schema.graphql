@@ -1,15 +1,10 @@
 schema {
     query: Query
-    mutation: Mutation
 }
 
 type Query {
     One: Employee
     Two: Project
-}
-
-type Mutation {
-
 }
 
 type Employee {

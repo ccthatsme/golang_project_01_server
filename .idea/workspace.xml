@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/graphql/schema/schema.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice/graphql.go" afterDir="false" />
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="added graphql package that contains the schema and file to initialize schema">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603852485903</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added graphql package that contains the schema and file to initialize schema">
+      <created>1604073383978</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1604073383978</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +255,7 @@
     <MESSAGE value="a little cleanup and formatting" />
     <MESSAGE value="200 response for getAllProjects endpoint" />
     <MESSAGE value="200 response for getProject by id endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="200 response for getProject by id endpoint" />
+    <MESSAGE value="added graphql package that contains the schema and file to initialize schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="added graphql package that contains the schema and file to initialize schema" />
   </component>
 </project>
