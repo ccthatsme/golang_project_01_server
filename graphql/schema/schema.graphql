@@ -3,8 +3,8 @@ schema {
 }
 
 type Query {
-    One: Employee
-    Two: Project
+    One: [Employee]
+    Two: [Project]
 }
 
 type Employee {

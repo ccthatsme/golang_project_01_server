@@ -75,6 +75,17 @@ func main() {
 		},
 	)
 
+	//schema
+	fields := graphql.Fields{
+		"listEmployees": &graphql.Field{
+			Type:        graphql.NewList(employeeType),
+			Description: "Get all employees",
+			Resolve: func(params graphql.ResolveParams) (interface{}, error) {
+				return services.CheckTokenExists(services.GetEmployees), nil
+			},
+		},
+	}
+
 	r := mux.NewRouter()
 
 	r.HandleFunc("/auth", services.Auth).Methods("POST")
