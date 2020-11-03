@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="another graphql commit">
+      <change afterPath="$PROJECT_DIR$/Models/models.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global/http_datasource.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/employee/employee.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/resolver.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resolvers/EmployeeResolver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/schema/schema.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/methodSchema/schema.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.go" afterDir="false" />
     </list>
@@ -30,6 +36,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/graphql/methodSchema" />
       <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>

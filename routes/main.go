@@ -3,11 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/golang_project_01_server/datasources"
+	//"github.com/friendsofgo/graphiql"
+	//"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/services"
 	"github.com/gorilla/mux"
-	"github.com/graphql-go/graphql"
-	"io/ioutil"
+	//"github.com/graphql-go/graphql"
+	//"io/ioutil"
 	"net/http"
 )
 
@@ -41,52 +42,64 @@ var token string
 
 func main() {
 
-	var employeeType = graphql.NewObject(
-		graphql.ObjectConfig{
-			Name: "Employee",
-			Fields: graphql.Fields{
-				"id": &graphql.Field{
-					Type: graphql.ID,
-				},
-				"display_name": &graphql.Field{
-					Type: graphql.String,
-				},
-				"email": &graphql.Field{
-					Type: graphql.String,
-				},
-			},
-		},
-	)
+// 	var employeeType = graphql.NewObject(
+// 		graphql.ObjectConfig{
+// 			Name: "Employee",
+// 			Fields: graphql.Fields{
+// 				"id": &graphql.Field{
+// 					Type: graphql.ID,
+// 				},
+// 				"display_name": &graphql.Field{
+// 					Type: graphql.String,
+// 				},
+// 				"email": &graphql.Field{
+// 					Type: graphql.String,
+// 				},
+// 			},
+// 		},
+// 	)
+//
+// 	var projectType = graphql.NewObject(
+// 		graphql.ObjectConfig{
+// 			Name: "Project",
+// 			Fields: graphql.Fields{
+// 				"id": &graphql.Field{
+// 					Type: graphql.ID,
+// 				},
+// 				"active": &graphql.Field{
+// 					Type: graphql.Boolean,
+// 				},
+// 				"name": &graphql.Field{
+// 					Type: graphql.String,
+// 				},
+// 			},
+// 		},
+// 	)
+//
+// 	//schema
+// 	fields := graphql.Fields{
+// 		"listEmployees": &graphql.Field{
+// 			Type:        graphql.NewList(employeeType),
+// 			Description: "Get all employees",
+// 			Resolve: func(params graphql.ResolveParams) (interface{}, error) {
+// 				return services.CheckTokenExists(services.GetEmployees), nil
+// 			},
+// 		},
+// 	}
 
-	var projectType = graphql.NewObject(
-		graphql.ObjectConfig{
-			Name: "Project",
-			Fields: graphql.Fields{
-				"id": &graphql.Field{
-					Type: graphql.ID,
-				},
-				"active": &graphql.Field{
-					Type: graphql.Boolean,
-				},
-				"name": &graphql.Field{
-					Type: graphql.String,
-				},
-			},
-		},
-	)
+// graphiqlHandler, err := graphiql.NewGraphiqlHandler("/graphiql")
+// 	if err != nil {
+// 		panic(err)
+// 	}
 
-	//schema
-	fields := graphql.Fields{
-		"listEmployees": &graphql.Field{
-			Type:        graphql.NewList(employeeType),
-			Description: "Get all employees",
-			Resolve: func(params graphql.ResolveParams) (interface{}, error) {
-				return services.CheckTokenExists(services.GetEmployees), nil
-			},
-		},
-	}
+
 
 	r := mux.NewRouter()
+
+	r.Handle("/graphql", gqlHandler())
+	//r.Handle("/graphiql", graphiqlHandler())
+
+
 
 	r.HandleFunc("/auth", services.Auth).Methods("POST")
 	r.HandleFunc("/employees", services.CheckTokenExists(services.GetEmployees)).Methods("GET")
@@ -104,9 +117,8 @@ func main() {
 
 }
 
-func login(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-
+func gqlHandler() http.Handler{
+return http.HandlerFunc(services.CheckTokenExists(services.GetEmployees))
 }
 
 func getEmployees(w http.ResponseWriter, r *http.Request) {
@@ -116,55 +128,3 @@ func getEmployees(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(newEmployee)
 }
 
-func getProjects(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(newProject)
-}
-
-func getSow(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(newSow)
-}
-
-func getClients(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(newClient)
-}
-
-func BasicAuth(handler http.HandlerFunc) http.HandlerFunc {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		username, password, ok := r.BasicAuth()
-		fmt.Println("username: ", username)
-		fmt.Println("password: ", password)
-		fmt.Println("ok: ", ok)
-		token = password
-		if !ok || !checkUserAndPassword(username, password) {
-			w.Header().Set("x-auth-token", "invalid")
-			w.WriteHeader(401)
-			w.Write([]byte("not authorized"))
-			handler.ServeHTTP(w, r)
-			return
-		} else {
-
-			handler.ServeHTTP(w, r)
-		}
-
-	})
-}
-
-func checkUserAndPassword(username, password string) bool {
-	return username == "cc" && password == "password"
-}
-
-func ValidateTokenMiddleware(next http.HandlerFunc) http.HandlerFunc {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if token == "password" {
-			next(w, r)
-		} else {
-			w.Header().Set("x-auth-token", "invalid")
-			w.WriteHeader(401)
-		}
-
-	})
-
-}

@@ -1,4 +1,4 @@
- package schema
+ package methodSchema
 
   import (
     "io/ioutil"
