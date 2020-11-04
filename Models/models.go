@@ -18,6 +18,8 @@ type Employee struct {
 	LastName  string `json:"last"`
 }
 
+var Employees []Employee
+
 //change to project at some point
 type Client struct {
 	Id             string `json:"id"`

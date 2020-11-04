@@ -20,8 +20,13 @@ func (r *Resolver) Query() queryResolver {
 	return &queryResolver{r}
 }
 
-func (r *Resolver) GetAllEmployees(ctx context.Context()) (*Models.Employee, err) {
+func (r *Resolver) GetAllEmployees(ctx context.Context()) (*[]Models.Employee, err) {
 
-employees, err := r.EmployeeService.GetAllEmployees()
+    employees, err := r.EmployeeService.GetAllEmployees()
+	if err != nil {
+	    fmt.Println("Error in employee resolver")
+	        return &Models.Employees
+	}
 
+            return
 }
