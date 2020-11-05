@@ -4,18 +4,18 @@ schema {
 
 type Query {
     getAllEmployees: [Employee]
-    getAllProjects: [Project]
+#    getAllProjects: [Project]
 }
 
 type Employee {
-    Id: ID
+    Id: String
     DisplayName: String
     Email: String
 
 }
 
-type Project{
-    Id: ID
-    Active: Boolean
-    Name: String
-}
+#type Project{
+#    Id: ID
+#    Active: Boolean
+#    Name: String
+#}

@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
+	"github.com/golang_project_01_server/graphql/models"
 )
 
 type Credential struct {
@@ -34,7 +35,8 @@ type Project struct {
 	Name   string `json:"name"`
 }
 
-var allEmp []Employee
+// var allEmp []Employee
+var allEmp []models.Employee
 var allPro []Project
 
 var m interface{}
@@ -80,7 +82,7 @@ func Authenticate(user *Credential) AuthResponse {
 	return respAuth
 }
 
-func GetAllEmployees(authKey string) []Employee {
+func GetAllEmployees(authKey string) []models.Employee {
 
 	client := http.Client{}
 

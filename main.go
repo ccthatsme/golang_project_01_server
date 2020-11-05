@@ -1,16 +1,17 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"github.com/golang_project_01_server/datasources"
+// 	"encoding/json"
+// 	"fmt"
+	//"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/graphql/resolver"
+	"github.com/golang_project_01_server/graphql/schema"
 	"github.com/golang_project_01_server/services"
 	"github.com/gorilla/mux"
 	"github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
-	"github.com/graphql-go/graphql"
-	"io/ioutil"
+	//"github.com/graphql-go/graphql"
+	//"io/ioutil"
 	"net/http"
 )
 
@@ -44,10 +45,10 @@ var token string
 
 func main() {
 
-	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.gql"), &resolver.Resolver{})
-	allowedHeaders := handlers.AllowedHeaders([]string{"content-type", "sso"})
-	allowedOrigins := handlers.AllowedOrigins([]string{"*"})
-	allowedMethods := handlers.AllowedMethods([]string{"POST", "OPTIONS", "GET"})
+	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{})
+// 	allowedHeaders := handlers.AllowedHeaders([]string{"content-type", "sso"})
+// 	allowedOrigins := handlers.AllowedOrigins([]string{"*"})
+// 	allowedMethods := handlers.AllowedMethods([]string{"POST", "OPTIONS", "GET"})
 
 	r := mux.NewRouter()
 	r.Handle("/graphql", &relay.Handler{Schema: schema})
