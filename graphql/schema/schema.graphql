@@ -4,7 +4,12 @@ schema {
 
 type Query {
     getAllEmployees: [Employee]
+    #authenticate: AuthResponse
 #    getAllProjects: [Project]
+}
+
+type Mutation {
+    authenticate(input: User): AuthResponse
 }
 
 type Employee {
@@ -13,6 +18,22 @@ type Employee {
     Email: String
 
 }
+
+input User {
+    username: String
+    password: String
+
+}
+
+type AuthResponse {
+    AccessToken:String
+    DisplayName: String
+    RefreshToken: String
+    Username: String
+    Groups:[String]
+}
+
+
 
 #type Project{
 #    Id: ID

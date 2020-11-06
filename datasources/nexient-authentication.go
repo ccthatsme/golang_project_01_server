@@ -42,9 +42,9 @@ var allPro []Project
 var m interface{}
 var emp Employee
 var pro Project
-var respAuth AuthResponse
+var respAuth models.AuthResponse
 
-func Authenticate(user *Credential) AuthResponse {
+func Authenticate(user *models.User) models.AuthResponse {
 
 	userJson, _ := json.Marshal(*user)
 

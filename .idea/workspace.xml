@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="program runs and able to run query in postman, although it is not getting any results, I think it has to do with the context">
+      <change afterPath="$PROJECT_DIR$/graphql/models/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphql/models/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/models/employee.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/models/employee.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +32,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
