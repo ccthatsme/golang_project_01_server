@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604951786913</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="access token is succesfully passed through and 200 response for getAllEmployees query. still only showing mitch's name for every employee though">
+      <created>1604951964285</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1604951964285</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,7 +269,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="get all books request succesfully serving json" />
     <MESSAGE value="PRACTICE succesfull post request for book" />
     <MESSAGE value="PRACTICE successful GET request for employees" />
     <MESSAGE value="successful GET employees request using external json file for that has an employee" />
@@ -287,6 +293,7 @@
     <MESSAGE value="trying to implement an authentication mutation that makes a post request returns an auth token. server runs, but getting  message: no mutations are offered by the schema error" />
     <MESSAGE value="succesful 200 response through the /graphql endpoint for authentication, succesfully got the access token back" />
     <MESSAGE value="got server to run with the r.use(middleware) added" />
-    <option name="LAST_COMMIT_MESSAGE" value="got server to run with the r.use(middleware) added" />
+    <MESSAGE value="access token is succesfully passed through and 200 response for getAllEmployees query. still only showing mitch's name for every employee though" />
+    <option name="LAST_COMMIT_MESSAGE" value="access token is succesfully passed through and 200 response for getAllEmployees query. still only showing mitch's name for every employee though" />
   </component>
 </project>
