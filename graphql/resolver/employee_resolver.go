@@ -32,7 +32,7 @@ func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, e
 	t := authorization.(string)
 	fmt.Println( "-----------------------------------------")
 	fmt.Println(t)
-	array := datasources.GetAllEmployees("")
+	array := datasources.GetAllEmployees(t)
 
 	employeeResolvers := make([]*employeeResolver, 0)
 
