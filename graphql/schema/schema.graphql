@@ -1,5 +1,6 @@
 schema {
     query: Query
+    mutation: Mutation
 }
 
 type Query {
@@ -20,8 +21,8 @@ type Employee {
 }
 
 input User {
-    username: String
-    password: String
+    username: String!
+    password: String!
 
 }
 
@@ -30,7 +31,7 @@ type AuthResponse {
     DisplayName: String
     RefreshToken: String
     Username: String
-    Groups:[String]
+    Groups:[String!]
 }
 
 

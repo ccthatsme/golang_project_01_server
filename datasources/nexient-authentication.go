@@ -45,7 +45,7 @@ var pro Project
 var respAuth models.AuthResponse
 
 func Authenticate(user *models.User) models.AuthResponse {
-
+fmt.Println(user)
 	userJson, _ := json.Marshal(*user)
 
 	client := http.Client{}

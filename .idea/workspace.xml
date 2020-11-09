@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="program runs and able to run query in postman, although it is not getting any results, I think it has to do with the context">
-      <change afterPath="$PROJECT_DIR$/graphql/models/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql/models/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" afterDir="false" />
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/models/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604173492318</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="trying to implement an authentication mutation that makes a post request returns an auth token. server runs, but getting  message: no mutations are offered by the schema error">
+      <created>1604637679305</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1604637679305</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +273,7 @@
     <MESSAGE value="200 response for getProject by id endpoint" />
     <MESSAGE value="added graphql package that contains the schema and file to initialize schema" />
     <MESSAGE value="added the graphql objects of project and employee" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the graphql objects of project and employee" />
+    <MESSAGE value="trying to implement an authentication mutation that makes a post request returns an auth token. server runs, but getting  message: no mutations are offered by the schema error" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to implement an authentication mutation that makes a post request returns an auth token. server runs, but getting  message: no mutations are offered by the schema error" />
   </component>
 </project>
