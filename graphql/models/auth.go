@@ -7,3 +7,7 @@ type AuthResponse struct {
 	Username     string   `json:"username"`
 	Groups       []string `json:"groups"`
 }
+
+type XAuth struct {
+	Token string `json:"token"`
+}

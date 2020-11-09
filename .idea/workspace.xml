@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/graphql/auth/middleware.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/models/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/models/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/models/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604637679305</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="succesful 200 response through the /graphql endpoint for authentication, succesfully got the access token back">
+      <created>1604889417864</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1604889417864</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,6 +283,7 @@
     <MESSAGE value="added graphql package that contains the schema and file to initialize schema" />
     <MESSAGE value="added the graphql objects of project and employee" />
     <MESSAGE value="trying to implement an authentication mutation that makes a post request returns an auth token. server runs, but getting  message: no mutations are offered by the schema error" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to implement an authentication mutation that makes a post request returns an auth token. server runs, but getting  message: no mutations are offered by the schema error" />
+    <MESSAGE value="succesful 200 response through the /graphql endpoint for authentication, succesfully got the access token back" />
+    <option name="LAST_COMMIT_MESSAGE" value="succesful 200 response through the /graphql endpoint for authentication, succesfully got the access token back" />
   </component>
 </project>

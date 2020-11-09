@@ -6,6 +6,7 @@ import (
 	//"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/graphql/resolver"
 	"github.com/golang_project_01_server/graphql/schema"
+	"github.com/golang_project_01_server/graphql/auth"
 	"github.com/golang_project_01_server/services"
 	"github.com/gorilla/mux"
 	"github.com/graph-gophers/graphql-go"
@@ -51,6 +52,7 @@ func main() {
 // 	allowedMethods := handlers.AllowedMethods([]string{"POST", "OPTIONS", "GET"})
 
 	r := mux.NewRouter()
+	r.Use(auth.Middleware())
 	r.Handle("/graphql", &relay.Handler{Schema: schema})
 
 	r.HandleFunc("/auth", services.Auth).Methods("POST")
