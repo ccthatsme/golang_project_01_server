@@ -7,6 +7,7 @@ import (
 	"github.com/golang_project_01_server/datasources"
 	"github.com/gorilla/mux"
 	"net/http"
+	"github.com/golang_project_01_server/graphql/models"
 )
 
 type AuthResponse struct {
@@ -31,10 +32,11 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Version", "2")
 
 	decoder := json.NewDecoder(r.Body)
-	user := &datasources.Credential{}
-	err := decoder.Decode(user)
-	if err != nil {
-		panic(err)
+// 	user := &datasources.Credential{}
+    user := &models.User{}
+	    err := decoder.Decode(user)
+	    if err != nil {
+		    panic(err)
 	}
 
 	array := datasources.Authenticate(user)

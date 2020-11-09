@@ -1,0 +1,47 @@
+package resolver
+
+import (
+	"context"
+	//"fmt"
+	"github.com/golang_project_01_server/datasources"
+	"github.com/golang_project_01_server/graphql/models"
+)
+
+type employeeResolver struct {
+	Employee     *models.Employee
+	rootResolver *Resolver
+}
+
+func (r *employeeResolver) Id() *string {
+	return &r.Employee.Id
+}
+
+func (r *employeeResolver) DisplayName() *string {
+	return &r.Employee.DisplayName
+}
+
+func (r *employeeResolver) Email() *string {
+	return &r.Employee.Email
+}
+
+func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, error) {
+
+	authorization := ctx.Value("X-Authorization")
+
+	t := authorization.(string)
+
+	array := datasources.GetAllEmployees(t)
+
+	employeeResolvers := make([]*employeeResolver, 0)
+
+	for _, emp := range array {
+		e := models.NewEmployee(&emp)
+		employeeResolvers = append(employeeResolvers, &employeeResolver{
+			Employee:     e,
+			rootResolver: r,
+		})
+	}
+
+	return &employeeResolvers, nil
+
+}

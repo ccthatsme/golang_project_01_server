@@ -1,21 +1,41 @@
 schema {
     query: Query
+    mutation: Mutation
 }
 
 type Query {
-    One: [Employee]
-    Two: [Project]
+    getAllEmployees: [Employee]
+}
+
+type Mutation {
+    authenticate(input: User): AuthResponse
 }
 
 type Employee {
-    Id: ID
+    Id: String
     DisplayName: String
     Email: String
 
 }
 
-type Project{
-    Id: ID
-    Active: Boolean
-    Name: String
+input User {
+    username: String!
+    password: String!
+
 }
+
+type AuthResponse {
+    AccessToken:String
+    DisplayName: String
+    RefreshToken: String
+    Username: String
+    Groups:[String!]
+}
+
+
+
+#type Project{
+#    Id: ID
+#    Active: Boolean
+#    Name: String
+#}

@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/golang_project_01_server/graphql/models"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -34,15 +35,16 @@ type Project struct {
 	Name   string `json:"name"`
 }
 
-var allEmp []Employee
+// var allEmp []Employee
+var allEmp []models.Employee
 var allPro []Project
 
 var m interface{}
 var emp Employee
 var pro Project
-var respAuth AuthResponse
+var respAuth models.AuthResponse
 
-func Authenticate(user *Credential) AuthResponse {
+func Authenticate(user *models.User) models.AuthResponse {
 
 	userJson, _ := json.Marshal(*user)
 
@@ -80,7 +82,7 @@ func Authenticate(user *Credential) AuthResponse {
 	return respAuth
 }
 
-func GetAllEmployees(authKey string) []Employee {
+func GetAllEmployees(authKey string) []models.Employee {
 
 	client := http.Client{}
 
