@@ -1,26 +1,18 @@
 package resolver
 
 import (
-	"fmt"
 	"context"
+	//"fmt"
 	"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/graphql/models"
 )
-
-// type AuthResponse struct {
-// 	AccessToken  string   `json:"accesstoken"`
-// 	DisplayName  string   `json:"displayName"`
-// 	RefreshToken string   `json:"refreshtoken"`
-// 	Username     string   `json:"username"`
-// 	Groups       []string `json:"groups"`
-// }
 
 type XAuth struct {
 	Token string `json:"token"`
 }
 
 type authResolver struct {
-    Authorization *models.AuthResponse
+	Authorization *models.AuthResponse
 }
 
 func (r *authResolver) AccessToken() *string {
@@ -45,28 +37,13 @@ func (r *authResolver) Groups() *[]string {
 
 var AuthToken models.XAuth
 
-func (r *Resolver) Authenticate(ctx context.Context, args struct{ Input *models.User }) (*authResolver) {
+func (r *Resolver) Authenticate(ctx context.Context, args struct{ Input *models.User }) *authResolver {
 
-    sampleUser:=args.Input
-    xauth:=datasources.Authenticate(sampleUser)
+	sampleUser := args.Input
 
-    AuthToken.Token = xauth.AccessToken
+	xauth := datasources.Authenticate(sampleUser)
 
-    ctx = context.WithValue(ctx, "X-Authorization", xauth.AccessToken)
-    fmt.Println(ctx)
+	AuthToken.Token = xauth.AccessToken
 
-
-
-// fmt.Println(&authResolver{Authorization: &xauth})
-
-    return &authResolver{Authorization: &xauth}
-
+	return &authResolver{Authorization: &xauth}
 }
-
-// func (r *Resolver) Authenticate(ctx context.Context, args *models.User) (*authResolver) {
-// fmt.Println(args)
-//     xauth:=datasources.Authenticate(args)
-// fmt.Println(&authResolver{Authorization: &xauth})
-//     return &authResolver{Authorization: &xauth}
-//
-// }

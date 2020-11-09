@@ -5,8 +5,6 @@ schema {
 
 type Query {
     getAllEmployees: [Employee]
-    #authenticate: AuthResponse
-#    getAllProjects: [Project]
 }
 
 type Mutation {

@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/golang_project_01_server/graphql/models"
 	"io/ioutil"
 	"net/http"
 	"strings"
-	"github.com/golang_project_01_server/graphql/models"
 )
 
 type Credential struct {
@@ -45,7 +45,7 @@ var pro Project
 var respAuth models.AuthResponse
 
 func Authenticate(user *models.User) models.AuthResponse {
-fmt.Println(user)
+
 	userJson, _ := json.Marshal(*user)
 
 	client := http.Client{}

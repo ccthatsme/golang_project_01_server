@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/auth/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/auth/middleware.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/models/employee.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/models/employee.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/schema/schema.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604953453200</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="200 response still for getAllEmployees, made a function that creates a new employee, using in employee resolver">
+      <created>1604955160192</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1604955160192</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +291,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="PRACTICE successful GET request for employees" />
     <MESSAGE value="successful GET employees request using external json file for that has an employee" />
     <MESSAGE value="successful GET projects request using external json file for that has an project" />
     <MESSAGE value="successful GET sow request using external json file for that has an sow" />
@@ -302,6 +315,7 @@
     <MESSAGE value="got server to run with the r.use(middleware) added" />
     <MESSAGE value="access token is succesfully passed through and 200 response for getAllEmployees query. still only showing mitch's name for every employee though" />
     <MESSAGE value="200 response for getAllEmployees, now showing every DisplayName, employeeresolver no longer contains pointers to employee model though" />
-    <option name="LAST_COMMIT_MESSAGE" value="200 response for getAllEmployees, now showing every DisplayName, employeeresolver no longer contains pointers to employee model though" />
+    <MESSAGE value="200 response still for getAllEmployees, made a function that creates a new employee, using in employee resolver" />
+    <option name="LAST_COMMIT_MESSAGE" value="200 response still for getAllEmployees, made a function that creates a new employee, using in employee resolver" />
   </component>
 </project>

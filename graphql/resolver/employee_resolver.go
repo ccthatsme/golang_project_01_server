@@ -1,16 +1,14 @@
 package resolver
 
 import (
-	"fmt"
 	"context"
+	//"fmt"
 	"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/graphql/models"
 )
 
-
-
 type employeeResolver struct {
-	Employee *models.Employee
+	Employee     *models.Employee
 	rootResolver *Resolver
 }
 
@@ -29,18 +27,18 @@ func (r *employeeResolver) Email() *string {
 func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, error) {
 
 	authorization := ctx.Value("X-Authorization")
+
 	t := authorization.(string)
-	fmt.Println( "-----------------------------------------")
-	fmt.Println(t)
+
 	array := datasources.GetAllEmployees(t)
 
 	employeeResolvers := make([]*employeeResolver, 0)
 
 	for _, emp := range array {
-	e := models.NewEmployee(&emp)
+		e := models.NewEmployee(&emp)
 		employeeResolvers = append(employeeResolvers, &employeeResolver{
-			Employee: e,
- 			rootResolver: r,
+			Employee:     e,
+			rootResolver: r,
 		})
 	}
 

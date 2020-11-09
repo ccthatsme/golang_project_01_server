@@ -33,10 +33,10 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 
 	decoder := json.NewDecoder(r.Body)
 // 	user := &datasources.Credential{}
-user := &models.User{}
-	err := decoder.Decode(user)
-	if err != nil {
-		panic(err)
+    user := &models.User{}
+	    err := decoder.Decode(user)
+	    if err != nil {
+		    panic(err)
 	}
 
 	array := datasources.Authenticate(user)
