@@ -10,7 +10,7 @@ import (
 
 
 type employeeResolver struct {
-	Employee models.Employee
+	Employee *models.Employee
 	rootResolver *Resolver
 }
 
@@ -37,8 +37,9 @@ func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, e
 	employeeResolvers := make([]*employeeResolver, 0)
 
 	for _, emp := range array {
+	e := models.NewEmployee(&emp)
 		employeeResolvers = append(employeeResolvers, &employeeResolver{
-			Employee: emp,
+			Employee: e,
  			rootResolver: r,
 		})
 	}
