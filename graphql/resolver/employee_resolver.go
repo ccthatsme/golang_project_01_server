@@ -65,3 +65,20 @@ func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, e
 	return &employeeResolvers, nil
 
 }
+
+func (r *Resolver) GetEmployee(ctx context.Context, args struct{ ID string }) (*employeeResolver, error) {
+
+	authorization := ctx.Value("X-Authorization")
+
+	t := authorization.(string)
+
+	emp := datasources.GetEmployee(t, args.ID)
+
+	e := models.NewEmployee(&emp)
+
+	return &employeeResolver{
+		Employee:     e,
+		rootResolver: r,
+	}, nil
+
+}

@@ -40,7 +40,7 @@ var allEmp []models.Employee
 var allPro []models.Project
 
 var m interface{}
-var emp Employee
+var emp models.Employee
 var pro Project
 var respAuth models.AuthResponse
 
@@ -114,7 +114,7 @@ func GetAllEmployees(authKey string) []models.Employee {
 
 }
 
-func GetEmployee(authKey string, employeeId string) Employee {
+func GetEmployee(authKey string, employeeId string) models.Employee {
 
 	client := http.Client{}
 

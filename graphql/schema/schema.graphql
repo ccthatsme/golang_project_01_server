@@ -6,6 +6,7 @@ schema {
 type Query {
     getAllEmployees: [Employee]
     getAllProjects: [Project]
+    getEmployee(id: String!): Employee
 }
 
 type Mutation {
