@@ -61,3 +61,18 @@ func (r *Resolver) GetAllProjects(ctx context.Context) (*[]*projectResolver, err
 	return &projectResolvers, nil
 
 }
+
+func (r *Resolver) GetProject(ctx context.Context, args struct{ ID string }) (*projectResolver, error) {
+	authorization := ctx.Value("X-Authorization")
+
+	t := authorization.(string)
+
+	pro := datasources.GetProject(t, args.ID)
+
+	p := models.NewProject(&pro)
+
+	return &projectResolver{
+		Project:      p,
+		rootResolver: r,
+	}, nil
+}

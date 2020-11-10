@@ -35,13 +35,12 @@ type Project struct {
 	Name   string `json:"name"`
 }
 
-// var allEmp []Employee
 var allEmp []models.Employee
 var allPro []models.Project
 
 var m interface{}
 var emp models.Employee
-var pro Project
+var pro models.Project
 var respAuth models.AuthResponse
 
 func Authenticate(user *models.User) models.AuthResponse {
@@ -178,7 +177,7 @@ func GetAllProjects(authKey string) []models.Project {
 
 }
 
-func GetProject(authKey string, projectId string) Project {
+func GetProject(authKey string, projectId string) models.Project {
 
 	client := http.Client{}
 
