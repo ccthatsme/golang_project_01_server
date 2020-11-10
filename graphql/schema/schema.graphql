@@ -15,6 +15,7 @@ type Mutation {
 
 type Employee {
     Id: String
+    EmployeeNetworkId: String
     DisplayName: String
     Email: String
     Department: String

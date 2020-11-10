@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/models/employee.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/models/employee.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
     </list>
@@ -289,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604985109798</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added query for getEmployee, succesfully getting response. have to input employeenetworkid">
+      <created>1605025342780</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1605025342780</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,7 +313,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="successful GET clients request using external json file for that has an client" />
     <MESSAGE value="formatted code using gofmt -w main.go command" />
     <MESSAGE value="implemented a basic auth, checks user and password input in postman to expected user and password in authMiddlewar.go" />
     <MESSAGE value="commiting just in case" />
@@ -331,6 +337,7 @@
     <MESSAGE value="cleaning up code a little, spacing, and deleting comments" />
     <MESSAGE value="added more attributes to Employee" />
     <MESSAGE value="added query for getAllProjects, succesfull query 200 response" />
-    <option name="LAST_COMMIT_MESSAGE" value="added query for getAllProjects, succesfull query 200 response" />
+    <MESSAGE value="added query for getEmployee, succesfully getting response. have to input employeenetworkid" />
+    <option name="LAST_COMMIT_MESSAGE" value="added query for getEmployee, succesfully getting response. have to input employeenetworkid" />
   </component>
 </project>

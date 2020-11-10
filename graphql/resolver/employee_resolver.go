@@ -44,6 +44,10 @@ func (r *employeeResolver) Practice() *string {
 	return &r.Employee.Practice
 }
 
+func (r *employeeResolver) EmployeeNetworkId() *string {
+	return &r.Employee.EmployeeNetworkId
+}
+
 func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, error) {
 
 	authorization := ctx.Value("X-Authorization")
