@@ -15,7 +15,11 @@ type Employee {
     Id: String
     DisplayName: String
     Email: String
-
+    Department: String
+    HireDate: String
+    JobTitle: String
+    Manager: String
+    Practice: String
 }
 
 input User {

@@ -24,6 +24,26 @@ func (r *employeeResolver) Email() *string {
 	return &r.Employee.Email
 }
 
+func (r *employeeResolver) HireDate() *string {
+	return &r.Employee.HireDate
+}
+
+func (r *employeeResolver) Department() *string {
+	return &r.Employee.Department
+}
+
+func (r *employeeResolver) JobTitle() *string {
+	return &r.Employee.JobTitle
+}
+
+func (r *employeeResolver) Manager() *string {
+	return &r.Employee.Manager
+}
+
+func (r *employeeResolver) Practice() *string {
+	return &r.Employee.Practice
+}
+
 func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, error) {
 
 	authorization := ctx.Value("X-Authorization")
