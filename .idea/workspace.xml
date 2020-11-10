@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/graphql/models/project.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql/resolver/project_resolver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/schema/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema/schema.graphql" afterDir="false" />
-    </list>
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604982088481</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added query for getAllProjects, succesfull query 200 response">
+      <created>1604985109798</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1604985109798</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,7 +301,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="successful GET sow request using external json file for that has an sow" />
     <MESSAGE value="successful GET clients request using external json file for that has an client" />
     <MESSAGE value="formatted code using gofmt -w main.go command" />
     <MESSAGE value="implemented a basic auth, checks user and password input in postman to expected user and password in authMiddlewar.go" />
@@ -325,6 +325,7 @@
     <MESSAGE value="200 response still for getAllEmployees, made a function that creates a new employee, using in employee resolver" />
     <MESSAGE value="cleaning up code a little, spacing, and deleting comments" />
     <MESSAGE value="added more attributes to Employee" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more attributes to Employee" />
+    <MESSAGE value="added query for getAllProjects, succesfull query 200 response" />
+    <option name="LAST_COMMIT_MESSAGE" value="added query for getAllProjects, succesfull query 200 response" />
   </component>
 </project>
