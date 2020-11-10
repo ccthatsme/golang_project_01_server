@@ -5,6 +5,7 @@ schema {
 
 type Query {
     getAllEmployees: [Employee]
+    getAllProjects: [Project]
 }
 
 type Mutation {
@@ -15,7 +16,11 @@ type Employee {
     Id: String
     DisplayName: String
     Email: String
-
+    Department: String
+    HireDate: String
+    JobTitle: String
+    Manager: String
+    Practice: String
 }
 
 input User {
@@ -34,8 +39,12 @@ type AuthResponse {
 
 
 
-#type Project{
-#    Id: ID
-#    Active: Boolean
-#    Name: String
-#}
+type Project{
+    Id: String
+    Name: String
+    ParentId: String
+    StartDate: String
+    EndDate:String
+    Description: String
+    ClientId: String
+}

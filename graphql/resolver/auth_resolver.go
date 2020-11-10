@@ -7,10 +7,6 @@ import (
 	"github.com/golang_project_01_server/graphql/models"
 )
 
-type XAuth struct {
-	Token string `json:"token"`
-}
-
 type authResolver struct {
 	Authorization *models.AuthResponse
 }
