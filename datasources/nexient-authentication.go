@@ -37,7 +37,7 @@ type Project struct {
 
 // var allEmp []Employee
 var allEmp []models.Employee
-var allPro []Project
+var allPro []models.Project
 
 var m interface{}
 var emp Employee
@@ -146,7 +146,7 @@ func GetEmployee(authKey string, employeeId string) Employee {
 
 }
 
-func GetAllProjects(authKey string) []Project {
+func GetAllProjects(authKey string) []models.Project {
 
 	client := http.Client{}
 
