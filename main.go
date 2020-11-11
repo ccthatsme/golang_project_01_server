@@ -12,6 +12,17 @@ import (
 
 func main() {
 
+	endpoint := "https://portal.nexient.com/gateway/api/"
+
+	ds, err := datasources.NewNexientDataSource(endpoint)
+	if err != nil {
+		panic(err)
+	}
+
+	env := &datasource.Env{
+		EmployeeService: &services.EmployeeDatasource{CompanyHttp: ds},
+	}
+
 	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{})
 
 	r := mux.NewRouter()
