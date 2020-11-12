@@ -1,8 +1,8 @@
 package datasources
 
 import (
-	//"bytes"
-	//"strings"
+	"bytes"
+	"strings"
 	"io/ioutil"
 	"encoding/json"
 	"fmt"
@@ -82,43 +82,43 @@ var pro models.Project
 // 	return bodyBytes
 // }
 
-// func Authenticate(user *models.User) models.AuthResponse {
-//
-// 	userJson, _ := json.Marshal(*user)
-//
-// 	client := http.Client{}
-//
-// 	request, err := http.NewRequest("POST", "https://portal.nexient.com/gateway/api/authentication/authenticate", bytes.NewBuffer(userJson))
-// 	request.Header.Set("Content-type", "application/json")
-// 	request.Header.Set("Version", "2")
-// 	if err != nil {
-// 		fmt.Println("line 40 nex-auth")
-// 	}
-//
-// 	resp, err := client.Do(request)
-// 	if err != nil {
-// 		fmt.Println("error making post request, nex-auth.go")
-// 	}
-// 	access := resp.Header["Accesstoken"]
-// 	refresh := resp.Header["Refreshtoken"]
-//
-// 	respAuth.AccessToken = strings.Join(access, "")
-// 	respAuth.RefreshToken = strings.Join(refresh, "")
-//
-// 	defer resp.Body.Close()
-//
-// 	bodyBytes, err := ioutil.ReadAll(resp.Body)
-// 	if err != nil {
-// 		fmt.Println("line 57")
-// 	}
-//
-// 	json.Unmarshal(bodyBytes, &respAuth)
-// 	if err != nil {
-// 		fmt.Println("line 58")
-// 	}
-//
-// 	return respAuth
-// }
+func Authenticate(user *models.User) models.AuthResponse {
+
+	userJson, _ := json.Marshal(*user)
+
+	client := http.Client{}
+
+	request, err := http.NewRequest("POST", "https://portal.nexient.com/gateway/api/authentication/authenticate", bytes.NewBuffer(userJson))
+	request.Header.Set("Content-type", "application/json")
+	request.Header.Set("Version", "2")
+	if err != nil {
+		fmt.Println("line 40 nex-auth")
+	}
+
+	resp, err := client.Do(request)
+	if err != nil {
+		fmt.Println("error making post request, nex-auth.go")
+	}
+	access := resp.Header["Accesstoken"]
+	refresh := resp.Header["Refreshtoken"]
+
+	respAuth.AccessToken = strings.Join(access, "")
+	respAuth.RefreshToken = strings.Join(refresh, "")
+
+	defer resp.Body.Close()
+
+	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("line 57")
+	}
+
+	json.Unmarshal(bodyBytes, &respAuth)
+	if err != nil {
+		fmt.Println("line 58")
+	}
+
+	return respAuth
+}
 
 func GetAllEmployees(authKey string) []models.Employee {
 

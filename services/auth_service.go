@@ -33,6 +33,7 @@ func (ds *AuthDataSource) Auth(user *models.User) *models.AuthResponse {
 		fmt.Println("line 58")
 	}
 
+fmt.Println(responsiveAuth)
 	return &responsiveAuth
 
 }

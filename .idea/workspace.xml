@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services_authorization/service_authentication.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasources/nexient_datasource.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient_datasource.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +36,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services_authorization" />
       <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>
@@ -340,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605197245384</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="got the server to run, but postman returning null values for authenticate, should return access token">
+      <created>1605197791652</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1605197791652</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,7 +367,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="succesful 200 response for authentication, moved the AuthResponse struct into the datasource, it passes the response into the service now" />
     <MESSAGE value="getting the context to print on a call to the olg getEmployees method" />
     <MESSAGE value="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1" />
     <MESSAGE value="converting getAllEmployees response from byte array to array of Employee struct" />
@@ -382,6 +391,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="working on resolver layer" />
     <MESSAGE value="getting error in nexient_datasource of invalid indirect of data type interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="getting error in nexient_datasource of invalid indirect of data type interface" />
+    <MESSAGE value="got the server to run, but postman returning null values for authenticate, should return access token" />
+    <option name="LAST_COMMIT_MESSAGE" value="got the server to run, but postman returning null values for authenticate, should return access token" />
   </component>
 </project>

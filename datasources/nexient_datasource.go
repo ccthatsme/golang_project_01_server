@@ -52,6 +52,7 @@ func (ds *NexientDataSource) Post(endpoint string, data interface{}) ([]byte, er
 	respAuth.AccessToken = strings.Join(access, "")
 	respAuth.RefreshToken = strings.Join(refresh, "")
 
+
 	defer resp.Body.Close()
 
 	bodyBytes, err := ioutil.ReadAll(resp.Body)
@@ -59,6 +60,11 @@ func (ds *NexientDataSource) Post(endpoint string, data interface{}) ([]byte, er
 		fmt.Println("line 57")
 	}
 
+		json.Unmarshal(bodyBytes, &respAuth)
+    	if err != nil {
+    		fmt.Println("line 58")
+    	}
+fmt.Println(string(bodyBytes[0]), "datasource")
 	return bodyBytes, nil
 
 }

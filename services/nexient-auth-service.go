@@ -1,11 +1,11 @@
  package services
-//
+
 // import (
-// 	"context"
+// 	//"context"
 // 	"encoding/json"
 // 	//"fmt"
 // 	//"github.com/golang_project_01_server/datasources"
-// 	"github.com/gorilla/mux"
+// 	//"github.com/gorilla/mux"
 // 	"net/http"
 // 	"github.com/golang_project_01_server/graphql/models"
 // )
@@ -27,7 +27,7 @@
 // var AuthToken XAuth
 // var AuthTokenTwo XAuth
 //
-// func Auth(w http.ResponseWriter, r *http.Request) {
+// func serviceAuthorization(w http.ResponseWriter, r *http.Request) {
 // 	w.Header().Set("Content-Type", "application/json")
 // 	w.Header().Set("Version", "2")
 //
@@ -46,7 +46,7 @@
 // 	json.NewEncoder(w).Encode(array)
 //
 // }
-//
+
 // func GetEmployees(w http.ResponseWriter, r *http.Request) {
 // 	w.Header().Set("Content-Type", "application/json")
 // 	w.Header().Set("Version", "2")
