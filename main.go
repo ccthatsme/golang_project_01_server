@@ -8,6 +8,8 @@ import (
 	"github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
 	"net/http"
+	"github.com/golang_project_01_server/datasources"
+	"github.com/golang_project_01_server/services"
 )
 
 func main() {
@@ -19,11 +21,11 @@ func main() {
 		panic(err)
 	}
 
-	env := &datasource.Env{
+	env := &datasources.Env{
 		EmployeeService: &services.EmployeeDatasource{CompanyHttp: ds},
 	}
 
-	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{})
+	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{Env: env})
 
 	r := mux.NewRouter()
 	r.Use(auth.Middleware())

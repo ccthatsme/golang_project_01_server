@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/services/auth_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasources/nexient-authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient-authentication.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasources/nexient_datasource.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient_datasource.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources/root_datasource.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/root_datasource.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/global_methods/http_datasource_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/global_methods/http_datasource_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/auth_resolver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/nexient-auth-service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/nexient-auth-service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -326,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605126203476</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="working on resolver layer">
+      <created>1605151444646</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1605151444646</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,7 +354,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="got a succesfull authentication response in postman, need to adjust response body" />
     <MESSAGE value="with Guy's help, we debugged why I was getting an undefined unmarshal error, because I have variables named the same things, fixed and now I can unmarshal succesfully into a authresponse struct" />
     <MESSAGE value="succesful 200 response for authentication, moved the AuthResponse struct into the datasource, it passes the response into the service now" />
     <MESSAGE value="getting the context to print on a call to the olg getEmployees method" />
@@ -368,6 +378,7 @@
     <MESSAGE value="added employeenetworkid attribute for Employee Type and Struct" />
     <MESSAGE value="added query to get specific project, tested and getting 200 response in postman" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="working on resolver layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on resolver layer" />
   </component>
 </project>

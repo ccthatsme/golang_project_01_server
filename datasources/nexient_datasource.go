@@ -3,6 +3,12 @@ package datasources
 import (
 	"github.com/golang_project_01_server/global_methods"
 	"github.com/golang_project_01_server/graphql/models"
+	"encoding/json"
+	"net/http"
+	"fmt"
+		"bytes"
+    	"strings"
+    	"io/ioutil"
 )
 
 type NexientDataSource struct {

@@ -3,7 +3,7 @@ package resolver
 import (
 	"context"
 	//"fmt"
-	"github.com/golang_project_01_server/datasources"
+	//"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/graphql/models"
 )
 
@@ -33,11 +33,22 @@ func (r *authResolver) Groups() *[]string {
 
 var AuthToken models.XAuth
 
+// func (r *Resolver) Authenticate(ctx context.Context, args struct{ Input *models.User }) *authResolver {
+//
+// 	sampleUser := args.Input
+//
+// 	xauth := datasources.Authenticate(sampleUser)
+//
+// 	AuthToken.Token = xauth.AccessToken
+//
+// 	return &authResolver{Authorization: &xauth}
+// }
+
 func (r *Resolver) Authenticate(ctx context.Context, args struct{ Input *models.User }) *authResolver {
 
 	sampleUser := args.Input
 
-	xauth := datasources.Authenticate(sampleUser)
+	xauth := r.Env.AuthorizationService.Auth(sampleUser)
 
 	AuthToken.Token = xauth.AccessToken
 

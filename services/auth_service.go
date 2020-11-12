@@ -1,34 +1,38 @@
 package services
 
 import (
-	"github.com/golang_project_01_server/datasources"
+	//"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/global_methods"
 	"github.com/golang_project_01_server/graphql/models"
+	"encoding/json"
+	"fmt"
 )
 
 type AuthService interface {
-	Auth(user models.User) models.AuthResponse
+	Auth(user models.User) *models.AuthResponse
 }
 
 type AuthDataSource struct {
-	CompanyHttp *global_methods.HttpDataSource
+	CompanyHttp global_methods.HttpDataSource
 }
 
-func NewAuthService(companyHttp *global_methods.HttpDataSource) AuthService {
+func NewAuthService(companyHttp global_methods.HttpDataSource) AuthService {
 	return &AuthDataSource{
 		CompanyHttp: companyHttp,
 	}
 }
 
-func (ds *AuthDataSource) Auth(user models.User) models.AuthResponse {
+ var responsiveAuth models.AuthResponse
 
-	result := ds.CompanyHttp.Post("authentication/authenticate", user)
+func (ds *AuthDataSource) Auth(user models.User) *models.AuthResponse {
 
-	json.Unmarshal(result, &datasources.respAuth)
+	result, err := ds.CompanyHttp.Post("authentication/authenticate", user)
+
+	json.Unmarshal(result, &responsiveAuth)
 	if err != nil {
 		fmt.Println("line 58")
 	}
 
-	return &datasources.respAuth
+	return &responsiveAuth
 
 }
