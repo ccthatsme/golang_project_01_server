@@ -15,11 +15,11 @@ type NexientDataSource struct {
 	BaseEndPoint string
 }
 
-func NewNexientDataSource(baseEndPoint string) global_methods.HttpDataSource {
+func NewNexientDataSource(baseEndPoint string) (global_methods.HttpDataSource, error) {
 
 	return &NexientDataSource{
 		BaseEndPoint: baseEndPoint,
-	}
+	}, nil
 }
 
 var respAuth models.AuthResponse
@@ -31,7 +31,7 @@ func (ds *NexientDataSource) Get(endPoint string) ([]byte, error) {
 
 func (ds *NexientDataSource) Post(endpoint string, data interface{}) ([]byte, error) {
 
-	userJson, _ := json.Marshal(*data)
+	userJson, _ := json.Marshal(&data)
 
 	client := http.Client{}
 

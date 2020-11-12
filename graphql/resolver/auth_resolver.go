@@ -52,5 +52,5 @@ func (r *Resolver) Authenticate(ctx context.Context, args struct{ Input *models.
 
 	AuthToken.Token = xauth.AccessToken
 
-	return &authResolver{Authorization: &xauth}
+	return &authResolver{Authorization: xauth}
 }

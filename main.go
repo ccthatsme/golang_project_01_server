@@ -22,7 +22,7 @@ func main() {
 	}
 
 	env := &datasources.Env{
-		EmployeeService: &services.EmployeeDatasource{CompanyHttp: ds},
+		AuthorizationService: &services.AuthDataSource{CompanyHttp: ds},
 	}
 
 	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{Env: env})

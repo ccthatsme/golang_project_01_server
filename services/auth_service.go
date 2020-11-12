@@ -9,7 +9,7 @@ import (
 )
 
 type AuthService interface {
-	Auth(user models.User) *models.AuthResponse
+	Auth(user *models.User) *models.AuthResponse
 }
 
 type AuthDataSource struct {
@@ -24,7 +24,7 @@ func NewAuthService(companyHttp global_methods.HttpDataSource) AuthService {
 
  var responsiveAuth models.AuthResponse
 
-func (ds *AuthDataSource) Auth(user models.User) *models.AuthResponse {
+func (ds *AuthDataSource) Auth(user *models.User) *models.AuthResponse {
 
 	result, err := ds.CompanyHttp.Post("authentication/authenticate", user)
 
