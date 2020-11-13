@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="added query to get specific project, tested and getting 200 response in postman">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +20,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -29,6 +28,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services_authorization" />
       <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>
@@ -307,7 +307,70 @@
       <option name="project" value="LOCAL" />
       <updated>1605027452800</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="added query to get specific project, tested and getting 200 response in postman">
+      <created>1605118930964</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1605118930964</updated>
+    </task>
+    <task id="LOCAL-00038" summary="first commit">
+      <created>1605126203476</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1605126203476</updated>
+    </task>
+    <task id="LOCAL-00039" summary="working on resolver layer">
+      <created>1605151444646</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1605151444646</updated>
+    </task>
+    <task id="LOCAL-00040" summary="getting error in nexient_datasource of invalid indirect of data type interface">
+      <created>1605197245384</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1605197245384</updated>
+    </task>
+    <task id="LOCAL-00041" summary="got the server to run, but postman returning null values for authenticate, should return access token">
+      <created>1605197791652</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1605197791652</updated>
+    </task>
+    <task id="LOCAL-00042" summary="got the authentication to work in a regular post like how I did in the beginning, but token still not getting passed, getEmployees query returning null">
+      <created>1605206158723</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1605206158723</updated>
+    </task>
+    <task id="LOCAL-00043" summary="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!">
+      <created>1605211800369</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1605211800369</updated>
+    </task>
+    <task id="LOCAL-00044" summary="employee service is working getting succesfull query results, still need to implement project">
+      <created>1605241995185</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1605241995185</updated>
+    </task>
+    <task id="LOCAL-00045" summary="project service working, and queries are succesfully getting response!">
+      <created>1605242591181</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1605242591182</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,14 +387,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commiting just in case" />
-    <MESSAGE value="got a succesfull authentication response in postman, need to adjust response body" />
-    <MESSAGE value="with Guy's help, we debugged why I was getting an undefined unmarshal error, because I have variables named the same things, fixed and now I can unmarshal succesfully into a authresponse struct" />
-    <MESSAGE value="succesful 200 response for authentication, moved the AuthResponse struct into the datasource, it passes the response into the service now" />
-    <MESSAGE value="getting the context to print on a call to the olg getEmployees method" />
-    <MESSAGE value="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1" />
-    <MESSAGE value="converting getAllEmployees response from byte array to array of Employee struct" />
-    <MESSAGE value="/employees and /employees/{id} both succesfully work, struct I have for employee currently only returns the id, for brevity did not include all the data" />
     <MESSAGE value="a little cleanup and formatting" />
     <MESSAGE value="200 response for getAllProjects endpoint" />
     <MESSAGE value="200 response for getProject by id endpoint" />
@@ -349,6 +404,14 @@
     <MESSAGE value="added query for getEmployee, succesfully getting response. have to input employeenetworkid" />
     <MESSAGE value="added employeenetworkid attribute for Employee Type and Struct" />
     <MESSAGE value="added query to get specific project, tested and getting 200 response in postman" />
-    <option name="LAST_COMMIT_MESSAGE" value="added query to get specific project, tested and getting 200 response in postman" />
+    <MESSAGE value="first commit" />
+    <MESSAGE value="working on resolver layer" />
+    <MESSAGE value="getting error in nexient_datasource of invalid indirect of data type interface" />
+    <MESSAGE value="got the server to run, but postman returning null values for authenticate, should return access token" />
+    <MESSAGE value="got the authentication to work in a regular post like how I did in the beginning, but token still not getting passed, getEmployees query returning null" />
+    <MESSAGE value="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!" />
+    <MESSAGE value="employee service is working getting succesfull query results, still need to implement project" />
+    <MESSAGE value="project service working, and queries are succesfully getting response!" />
+    <option name="LAST_COMMIT_MESSAGE" value="project service working, and queries are succesfully getting response!" />
   </component>
 </project>

@@ -2,8 +2,6 @@ package resolver
 
 import (
 	"context"
-	//"fmt"
-	"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/graphql/models"
 )
 
@@ -54,8 +52,7 @@ func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, e
 
 	t := authorization.(string)
 
-	array := datasources.GetAllEmployees(t)
-
+	array := r.Env.EmployeeService.GetAllEmployees(t)
 	employeeResolvers := make([]*employeeResolver, 0)
 
 	for _, emp := range array {
@@ -76,9 +73,9 @@ func (r *Resolver) GetEmployee(ctx context.Context, args struct{ ID string }) (*
 
 	t := authorization.(string)
 
-	emp := datasources.GetEmployee(t, args.ID)
+    array := r.Env.EmployeeService.GetEmployee(t, args.ID)
 
-	e := models.NewEmployee(&emp)
+	e := models.NewEmployee(&array)
 
 	return &employeeResolver{
 		Employee:     e,
