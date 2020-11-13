@@ -16,7 +16,7 @@ import (
 
 func main() {
 
-	endpoint := "authentication/authenticate"
+	endpoint := "/employees"
 
 	ds, err := datasources.NewNexientDataSource(endpoint)
 	if err != nil {
@@ -24,7 +24,7 @@ func main() {
 	}
 
 	env := &datasources.Env{
-		AuthorizationService: &services.AuthDataSource{CompanyHttp: ds},
+		EmployeeService: &services.EmployeeDataSource{CompanyHttp: ds},
 	}
 
 	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{Env: env})

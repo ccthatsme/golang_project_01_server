@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/emp_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources/nexient_datasource.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient_datasource.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources/root_datasource.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/root_datasource.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global_methods/http_datasource_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/global_methods/http_datasource_interface.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/auth/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/auth/middleware.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services_authorization/service_authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/services_authorization/service_authentication.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -352,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605206158723</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!">
+      <created>1605211800369</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1605211800369</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="context is able to be accessed in the handler func in main.go, finally getting a employee in the response body of getEmployees, before it was just 1" />
     <MESSAGE value="converting getAllEmployees response from byte array to array of Employee struct" />
     <MESSAGE value="/employees and /employees/{id} both succesfully work, struct I have for employee currently only returns the id, for brevity did not include all the data" />
     <MESSAGE value="a little cleanup and formatting" />
@@ -394,6 +408,7 @@
     <MESSAGE value="getting error in nexient_datasource of invalid indirect of data type interface" />
     <MESSAGE value="got the server to run, but postman returning null values for authenticate, should return access token" />
     <MESSAGE value="got the authentication to work in a regular post like how I did in the beginning, but token still not getting passed, getEmployees query returning null" />
-    <option name="LAST_COMMIT_MESSAGE" value="got the authentication to work in a regular post like how I did in the beginning, but token still not getting passed, getEmployees query returning null" />
+    <MESSAGE value="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!" />
   </component>
 </project>

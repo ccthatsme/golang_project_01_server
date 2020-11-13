@@ -5,6 +5,7 @@ import (
 )
 
 type Env struct {
-	//EmployeeService services.EmployeeService
+	EmployeeService services.EmployeeService
     AuthorizationService services.AuthService
+    ProjectService services.ProjectService
 }

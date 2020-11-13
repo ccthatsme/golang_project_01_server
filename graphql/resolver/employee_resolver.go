@@ -3,7 +3,8 @@ package resolver
 import (
 	"context"
 	//"fmt"
-	"github.com/golang_project_01_server/datasources"
+	//"github.com/golang_project_01_server/datasources"
+	//"github.com/golang_project_01_server/services"
 	"github.com/golang_project_01_server/graphql/models"
 )
 
@@ -48,14 +49,35 @@ func (r *employeeResolver) EmployeeNetworkId() *string {
 	return &r.Employee.EmployeeNetworkId
 }
 
+// func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, error) {
+//
+// 	authorization := ctx.Value("X-Authorization")
+//
+// 	t := authorization.(string)
+//
+// 	array := datasources.GetAllEmployees(t)
+//
+// 	employeeResolvers := make([]*employeeResolver, 0)
+//
+// 	for _, emp := range array {
+// 		e := models.NewEmployee(&emp)
+// 		employeeResolvers = append(employeeResolvers, &employeeResolver{
+// 			Employee:     e,
+// 			rootResolver: r,
+// 		})
+// 	}
+//
+// 	return &employeeResolvers, nil
+//
+// }
+
 func (r *Resolver) GetAllEmployees(ctx context.Context) (*[]*employeeResolver, error) {
 
 	authorization := ctx.Value("X-Authorization")
 
 	t := authorization.(string)
 
-	array := datasources.GetAllEmployees(t)
-
+	array := r.Env.EmployeeService.GetAllEmployees(t)
 	employeeResolvers := make([]*employeeResolver, 0)
 
 	for _, emp := range array {
@@ -76,9 +98,10 @@ func (r *Resolver) GetEmployee(ctx context.Context, args struct{ ID string }) (*
 
 	t := authorization.(string)
 
-	emp := datasources.GetEmployee(t, args.ID)
+    array := r.Env.EmployeeService.GetEmployee(t, args.ID)
+	//emp := datasources.GetEmployee(t, args.ID)
 
-	e := models.NewEmployee(&emp)
+	e := models.NewEmployee(&array)
 
 	return &employeeResolver{
 		Employee:     e,

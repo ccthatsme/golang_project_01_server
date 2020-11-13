@@ -1,7 +1,6 @@
 package services
 
 import (
-	//"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/global_methods"
 	"github.com/golang_project_01_server/graphql/models"
 	"encoding/json"
@@ -33,7 +32,6 @@ func (ds *AuthDataSource) Auth(user *models.User) *models.AuthResponse {
 		fmt.Println("line 58")
 	}
 
-fmt.Println(responsiveAuth)
 	return &responsiveAuth
 
 }
