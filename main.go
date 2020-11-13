@@ -1,17 +1,16 @@
 package main
 
 import (
-    "github.com/golang_project_01_server/services_authorization"
+	"github.com/golang_project_01_server/datasources"
 	"github.com/golang_project_01_server/graphql/auth"
 	"github.com/golang_project_01_server/graphql/resolver"
 	"github.com/golang_project_01_server/graphql/schema"
+	"github.com/golang_project_01_server/services"
+	"github.com/golang_project_01_server/services_authorization"
 	"github.com/gorilla/mux"
 	"github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
 	"net/http"
-	"github.com/golang_project_01_server/datasources"
-	"github.com/golang_project_01_server/services"
-
 )
 
 func main() {
@@ -25,7 +24,7 @@ func main() {
 
 	env := &datasources.Env{
 		EmployeeService: &services.EmployeeDataSource{CompanyHttp: ds},
-		ProjectService: &services.ProjectDatasource{CompanyHttp: ds},
+		ProjectService:  &services.ProjectDatasource{CompanyHttp: ds},
 	}
 
 	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{Env: env})

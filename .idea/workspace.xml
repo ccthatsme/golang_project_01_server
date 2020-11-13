@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="" />
+    <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/datasources/db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphql/models/workorder.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workorder_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605242591182</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="added the project service to the ENV struct in main.go">
+      <created>1605243358343</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1605243358343</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -387,7 +400,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="a little cleanup and formatting" />
     <MESSAGE value="200 response for getAllProjects endpoint" />
     <MESSAGE value="200 response for getProject by id endpoint" />
     <MESSAGE value="added graphql package that contains the schema and file to initialize schema" />
@@ -412,6 +424,7 @@
     <MESSAGE value="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!" />
     <MESSAGE value="employee service is working getting succesfull query results, still need to implement project" />
     <MESSAGE value="project service working, and queries are succesfully getting response!" />
-    <option name="LAST_COMMIT_MESSAGE" value="project service working, and queries are succesfully getting response!" />
+    <MESSAGE value="added the project service to the ENV struct in main.go" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the project service to the ENV struct in main.go" />
   </component>
 </project>
