@@ -25,6 +25,7 @@ func main() {
 
 	env := &datasources.Env{
 		EmployeeService: &services.EmployeeDataSource{CompanyHttp: ds},
+		ProjectService: &services.ProjectDatasource{CompanyHttp: ds},
 	}
 
 	schema := graphql.MustParseSchema(schema.GetRootSchema("./graphql/schema/schema.graphql"), &resolver.Resolver{Env: env})
