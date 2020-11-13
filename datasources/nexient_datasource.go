@@ -49,47 +49,8 @@ func (ds *NexientDataSource) Get(endPoint string, authKey string) ([]byte, error
 		fmt.Println("line 57")
 	}
 
-// 	json.Unmarshal(bodyBytes, &allEmp)
-// 	if err != nil {
-// 		fmt.Println("line 58")
-// 	}
-// 	return allEmp
-
 	return bodyBytes, nil
 }
-
-// func (ds *NexientDataSource) Get(endPoint string, authKey string, id string) ([]byte, error) {
-//
-//     client := http.Client{}
-//
-// 	request, err := http.NewRequest("GET", "https://portal.nexient.com/gateway/api"+endPoint, nil)
-// 	request.Header.Set("Content-type", "application/json")
-// 	request.Header.Set("Version", "2")
-// 	request.Header.Set("X-Authorization", authKey)
-// 	if err != nil {
-// 		fmt.Println("line 40 nex-auth")
-// 	}
-//
-// 	resp, err := client.Do(request)
-// 	if err != nil {
-// 		fmt.Println("error making post request, nex-auth.go")
-// 	}
-//
-// 	defer resp.Body.Close()
-//
-// 	bodyBytes, err := ioutil.ReadAll(resp.Body)
-// 	if err != nil {
-// 		fmt.Println("line 57")
-// 	}
-//
-// // 	json.Unmarshal(bodyBytes, &allEmp)
-// // 	if err != nil {
-// // 		fmt.Println("line 58")
-// // 	}
-// // 	return allEmp
-//
-// 	return bodyBytes, nil
-// }
 
 func (ds *NexientDataSource) Post(endpoint string, data interface{}) ([]byte, error) {
 
