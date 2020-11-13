@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2f5bc9-07a4-4952-a855-f0c3e8bf3b0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/services/emp_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasources/nexient_datasource.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/nexient_datasource.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasources/root_datasource.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasources/root_datasource.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global_methods/http_datasource_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/global_methods/http_datasource_interface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/auth/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/auth/middleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/resolver/employee_resolver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services_authorization/service_authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/services_authorization/service_authentication.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pro_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/pro_service.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -367,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605211800369</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="employee service is working getting succesfull query results, still need to implement project">
+      <created>1605241995185</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1605241995185</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -384,7 +383,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="converting getAllEmployees response from byte array to array of Employee struct" />
     <MESSAGE value="/employees and /employees/{id} both succesfully work, struct I have for employee currently only returns the id, for brevity did not include all the data" />
     <MESSAGE value="a little cleanup and formatting" />
     <MESSAGE value="200 response for getAllProjects endpoint" />
@@ -409,6 +407,7 @@
     <MESSAGE value="got the server to run, but postman returning null values for authenticate, should return access token" />
     <MESSAGE value="got the authentication to work in a regular post like how I did in the beginning, but token still not getting passed, getEmployees query returning null" />
     <MESSAGE value="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!" />
-    <option name="LAST_COMMIT_MESSAGE" value="authentication endpoint working, access token is passed through to graphql endpoints, employees and projects endpoints working!" />
+    <MESSAGE value="employee service is working getting succesfull query results, still need to implement project" />
+    <option name="LAST_COMMIT_MESSAGE" value="employee service is working getting succesfull query results, still need to implement project" />
   </component>
 </project>
